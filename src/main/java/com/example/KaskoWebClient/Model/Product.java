@@ -1,12 +1,12 @@
 package com.example.KaskoWebClient.Model;
 
 public class Product {
-    private final Integer ID;
+    private final Integer id;
     private final String name;
-    public Product (Integer ID, String name) {
-        this.ID = ID;
+    public Product (Integer id, String name) {
+        this.id = id;
         this.name = name;
     }
-    public Integer getID() { return ID; }
+    public Integer getId() { return id; }
     public String getName() { return name; }
 }
