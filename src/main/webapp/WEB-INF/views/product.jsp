@@ -6,19 +6,30 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Element list</title>
+    <title>Product list</title>
 </head>
 <body>
-<h1 align="center">Element list</h1>
+<h1 align="center">Products</h1>
 <br/>
-<table border="1" cellpadding="10">
+<table border="3" cellpadding="10">
+    <colgroup>
+        <col span="2" style="background: khaki">
+        <col style="background-color: lightcyan">
+    </colgroup>
+    <caption>
+        Table of products
+    </caption>
     <tr>
+        <th>#</th>
+        <th>ID</th>
         <th>Name</th>
     </tr>
-    <jsp:useBean id="elements" scope="request" type="java.util.List"/>
+    <jsp:useBean id="elements" scope="request" type="java.util.Map"/>
     <c:forEach var="contact" items="${elements}">
         <tr>
-            <td>${contact}</td>
+            <ol type="1">
+                <th>${contact}</th><th>${contact.key}</th><th>${contact.value}</th>
+            </ol>
         </tr>
     </c:forEach>
 </table>
