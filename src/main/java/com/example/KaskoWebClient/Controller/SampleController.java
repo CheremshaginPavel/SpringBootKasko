@@ -1,20 +1,20 @@
 package com.example.KaskoWebClient.Controller;
 
-import com.example.KaskoWebClient.Model.Product;
+import com.example.KaskoWebClient.Model.Employee;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
-import java.util.Map;
 
 @Controller
+@RestController
 public class SampleController {
-
-    final static Map<Integer, Product> ELEMENTS = Map.of(1, new Product(123, "bananas"),
-            2, new Product(234, "watermelon"),
-            3, new Product(577, "grape"),
-            4, new Product(12, "cherry"),
-            5, new Product(56, "blueberry"));
 
     @GetMapping("/sample")
     public String hello() {
@@ -29,8 +29,14 @@ public class SampleController {
     }
 
     @GetMapping("/products")
-    public String listProduct(Model model) {
-        model.addAttribute("ELEMENTS", ELEMENTS);
+    public String listProduct(Model model) throws IOException {
+        final String url = "https://testout.sovcomins.ru/casco/cartest/get_products";
+        RestTemplate restTemplate = new RestTemplate();
+		String msg = restTemplate.getForObject(url,String.class);
+        byte[] jsonData = Files.readAllBytes(Paths.get(msg));
+        ObjectMapper mapper = new ObjectMapper();
+        Employee emp = mapper.readValue(jsonData, Employee.class);
+
         return "product";
     }
 }

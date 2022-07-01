@@ -24,12 +24,6 @@
         <th>ID</th>
         <th>Name</th>
     </tr>
-    <jsp:useBean id="ELEMENTS" scope="request" type="java.util.Map"/>
-    <c:forEach var="contact" items="${ELEMENTS}">
-            <tr>
-                <th>${contact.key}</th><th>${contact.value.id}</th><th>${contact.value.name}</th>
-            </tr>
-    </c:forEach>
 </table>
 </body>
 </html>
