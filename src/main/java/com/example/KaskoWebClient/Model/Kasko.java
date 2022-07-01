@@ -1,17 +1,16 @@
 package com.example.KaskoWebClient.Model;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.io.Serializable;
-
-@JsonAutoDetect
 public class Kasko {
-    private long id;
+    @JsonProperty("product-id")
+    private Integer id;
+    @JsonProperty("product-name")
     private String name;
-    public Kasko (long id, String name) {
+    public Kasko (Integer id, String name) {
         this.id = id;
         this.name = name;
     }
-    public long getId() { return id; }
+    public Integer getId() { return id; }
     public String getName() { return name; }
 }

@@ -11,7 +11,7 @@
 <body>
 <h1 align="center">Products</h1>
 <br/>
-<table border="3" cellpadding="10">
+<table border="2" cellpadding="10">
     <colgroup>
         <col span="2" style="background: khaki">
         <col style="background-color: lightcyan">
@@ -20,10 +20,15 @@
         Table of products
     </caption>
     <tr>
-        <th>#</th>
         <th>ID</th>
         <th>Name</th>
     </tr>
+    <jsp:useBean id="products" scope="request" type="com.example.KaskoWebClient.Model.KaskoAPI.Response.Products"/>
+    <c:forEach var="contact" items="${products}">
+        <tr>
+            <th>${contact.id}</th><th>${contact.name}</th>
+        </tr>
+    </c:forEach>
 </table>
 </body>
 </html>
