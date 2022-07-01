@@ -6,6 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.servlet.ModelAndView;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -14,23 +16,23 @@ import java.util.List;
 public class SampleController {
 
     @GetMapping("/sample")
-    public String hello() {
-        return "sample";
+    public ModelAndView hello() {
+        return new ModelAndView("sample");
     }
 
     @GetMapping("/elements")
-    public String listContact(Model model) {
+    public ModelAndView listContact(Model model) {
         List<String> elements = List.of("element1", "element2", "element3");
         model.addAttribute("elements", elements);
-        return "element";
+        return new ModelAndView("element");
     }
 
     @GetMapping("/products")
-    public String listProduct(Model model) throws IOException {
+    public ModelAndView listProduct(Model model) throws IOException {
         final String url = "https://testout.sovcomins.ru/casco/cartest/get_products";
         RestTemplate restTemplate = new RestTemplate();
 		Products products = restTemplate.getForObject(url, Products.class);
         model.addAttribute("products", products);
-        return "product";
+        return new ModelAndView("product");
     }
 }
