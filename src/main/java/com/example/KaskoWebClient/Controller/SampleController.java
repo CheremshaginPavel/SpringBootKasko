@@ -35,4 +35,9 @@ public class SampleController {
         model.addAttribute("products", products);
         return new ModelAndView("product");
     }
+
+    @GetMapping("/calc")
+    public ModelAndView calculate(Model model) throws IOException {
+        return new ModelAndView("calculate");
+    }
 }
