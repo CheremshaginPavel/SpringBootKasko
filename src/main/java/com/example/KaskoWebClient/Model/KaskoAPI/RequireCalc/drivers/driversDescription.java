@@ -1,29 +1,29 @@
-package com.example.KaskoWebClient.Model.KaskoAPI.RequireCalc;
+package com.example.KaskoWebClient.Model.KaskoAPI.RequireCalc.drivers;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class driversDescription {
 
-    @JsonProperty("transport_usage")
-    private Integer transport_usage;
+    @JsonProperty("multidrive")
+    private Boolean multidrive;
 
     @JsonProperty("insurer_workers_flag")
     private Boolean insurer_workers_flag;
 
-    @JsonProperty("flag_multidrive")
-    private Boolean flag_multidrive;
-
-    @JsonProperty("other_workers_flag")
-    private Boolean other_workers_flag;
+    @JsonProperty("transport_usage")
+    private Integer transport_usage;
 
     @JsonProperty("other_multidrive_flag")
     private Boolean other_multidrive_flag;
 
-    @JsonProperty("multidrive")
-    private Boolean multidrive;
-
     @JsonProperty("multidrive_type")
     private Integer multidrive_type;
+
+    @JsonProperty("other_workers_flag")
+    private Boolean other_workers_flag;
+
+    @JsonProperty("flag_multidrive")
+    private Boolean flag_multidrive;
 
     public driversDescription() {
     }

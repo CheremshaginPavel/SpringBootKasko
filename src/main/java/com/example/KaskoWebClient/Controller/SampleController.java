@@ -1,6 +1,6 @@
 package com.example.KaskoWebClient.Controller;
 
-import com.example.KaskoWebClient.Model.KaskoAPI.Response.Products;
+import com.example.KaskoWebClient.Model.KaskoAPI.ResponseProduct.Products;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

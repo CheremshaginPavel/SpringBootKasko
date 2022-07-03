@@ -1,4 +1,4 @@
-package com.example.KaskoWebClient.Model.KaskoAPI.Response;
+package com.example.KaskoWebClient.Model.KaskoAPI.ResponseProduct;
 
 import com.example.KaskoWebClient.Model.Product;
 import com.fasterxml.jackson.annotation.JsonProperty;

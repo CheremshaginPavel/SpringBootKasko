@@ -1,7 +1,8 @@
-package com.example.KaskoWebClient.Model.KaskoAPI.RequireCalc;
+package com.example.KaskoWebClient.Model.KaskoAPI.RequireCalc.insurance;
 
+import com.example.KaskoWebClient.Model.KaskoAPI.RequireCalc.insurance.secondLayers.Options;
+import com.example.KaskoWebClient.Model.KaskoAPI.RequireCalc.insurance.secondLayers.Risks;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.util.List;
 
 public class insuranceDescription {
 
@@ -20,8 +21,14 @@ public class insuranceDescription {
     @JsonProperty("special_program;")
     private Boolean special_program;
 
+    @JsonProperty("risks")
+    private Risks risks;
+
+    @JsonProperty("options")
+    private Options options;
+
     @JsonProperty("franchise_id")
-    private String franchise_id;
+    private Integer franchise_id;
 
     @JsonProperty("deprecation")
     private Boolean deprecation;
@@ -35,8 +42,8 @@ public class insuranceDescription {
     @JsonProperty("payment_plan_id;")
     private Integer payment_plan_id;
 
-    @JsonProperty("risks")
-    private List<Risk> risks;
+    @JsonProperty("franchise")
+    private String franchise;
 
     public insuranceDescription() {
     }
@@ -61,9 +68,9 @@ public class insuranceDescription {
 
     public void setSpecial_program(Boolean special_program) { this.special_program = special_program; }
 
-    public String getFranchise_id() { return franchise_id; }
+    public Integer getFranchise_id() { return franchise_id; }
 
-    public void setFranchise_id(String franchise_id) { this.franchise_id = franchise_id; }
+    public void setFranchise_id(Integer franchise_id) { this.franchise_id = franchise_id; }
 
     public Boolean getDeprecation() { return deprecation; }
 
@@ -81,8 +88,16 @@ public class insuranceDescription {
 
     public void setPayment_plan_id(Integer payment_plan_id) { this.payment_plan_id = payment_plan_id; }
 
-    public List<Risk> getRisks() { return risks; }
+    public Risks getRisks() { return risks; }
 
-    public void setRisks(List<Risk> risks) { this.risks = risks; }
+    public void setRisks(Risks risks) { this.risks = risks; }
+
+    public Options getOptions() { return options; }
+
+    public void setOptions(Options options) { this.options = options; }
+
+    public String getFranchise() { return franchise; }
+
+    public void setFranchise(String franchise) { this.franchise = franchise; }
 
 }
