@@ -7,7 +7,7 @@ public class SterringWheel {
     @JsonProperty("side")
     private String side;
 
-    SterringWheel() {
+    public SterringWheel() {
     }
 
     public String getSide() {

@@ -3,20 +3,23 @@ package com.example.KaskoWebClient.Controller;
 import com.example.KaskoWebClient.Model.KaskoAPI.RequireCalc.*;
 import com.example.KaskoWebClient.Model.KaskoAPI.ResponseProduct.Products;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
-@Controller
-//@RestController
+//@Controller
+@RestController
 public class SampleController {
 
     @GetMapping("/sample")
@@ -34,7 +37,7 @@ public class SampleController {
     @GetMapping("/products")
     public ModelAndView listProduct(Model model) throws IOException {
         RestTemplate restTemplate = new RestTemplate();
-		Products products = null;
+		Products products = new Products();
         products = restTemplate.getForObject(products.getUrl(), Products.class);
         model.addAttribute("products", products);
         return new ModelAndView("product");
@@ -42,16 +45,17 @@ public class SampleController {
 
     @GetMapping("/calc")
     public String calculate(Model model) throws IOException {
-        ObjectMapper objectMapper = null;
-        AutoCalcRq autoCalcRq = null;
-        assert false;
+        RestTemplate restTemplate = new RestTemplate();
+        ObjectMapper objectMapper = new ObjectMapper();
+        AutoCalcRq autoCalcRq = new AutoCalcRq();
+
         autoCalcRq.setPartnerPin("cartest");
         autoCalcRq.setCalcType("KASKO");
         autoCalcRq.setCalcDate(Date.from(Instant.now()));
         autoCalcRq.setExpressQuotationId(5768484);
 
-        AutoDescription auto = null;
-        ModelDescription modelDescription = null;
+        AutoDescription auto = new AutoDescription();
+        ModelDescription modelDescription = new ModelDescription();
         modelDescription.setTsNew(true);
         modelDescription.setMileAge("10");
         modelDescription.setMarkId("52");
@@ -61,19 +65,19 @@ public class SampleController {
         modelDescription.setHorsepower("130");
         modelDescription.setYear("2017");
 
-        SterringWheel sterringWheel = null;
+        SterringWheel sterringWheel = new SterringWheel();
         sterringWheel.setSide("LEFT");
         modelDescription.setSterringWheel(sterringWheel);
         auto.setModelDescription(modelDescription);
 
-        Price price = null;
+        Price price = new Price();
         price.setCurrency("RUB");
         price.setSum("1200000");
         auto.setPrice(price);
 
         auto.setRegionId("78");
 
-        CreditBank creditBank = null;
+        CreditBank creditBank = new CreditBank();
         creditBank.setBankId("137629");
         creditBank.setBankName("BMW bank (OOO)");
         auto.setCreditBank(creditBank);
@@ -84,7 +88,7 @@ public class SampleController {
 
         autoCalcRq.setAuto(auto);
 
-        InsuranceDescription insuranceDescription = null;
+        InsuranceDescription insuranceDescription = new InsuranceDescription();
 
         insuranceDescription.setKvSize("0");
         insuranceDescription.setProductId("50547");
@@ -97,13 +101,13 @@ public class SampleController {
         insuranceDescription.setReimbursement(2);
         insuranceDescription.setPaymentPlanId(1);
 
-        Risks risks = null;
+        Risks risks = new Risks();
         Risk riskChild = new Risk();
         List<Risk> risk = new ArrayList<>();
         riskChild.setRiskId(1);
         riskChild.setBankRequired(false);
         riskChild.setCodeRequired(false);
-        InsuredSumm insuredSumm = null;
+        InsuredSumm insuredSumm = new InsuredSumm();
         insuredSumm.setSum("1200000");
         riskChild.setInsuredSumm(insuredSumm);
         risk.add(0, riskChild);
@@ -114,7 +118,9 @@ public class SampleController {
         risk.add(1, riskChild);
         risks.setRisk(risk);
 
-        DriversDescription driversDescription = null;
+        insuranceDescription.setRisks(risks);
+
+        DriversDescription driversDescription = new DriversDescription();
         driversDescription.setTransportUsage(5);
         driversDescription.setInsurerWorkersFlag(false);
         driversDescription.setOtherWorkersFlag(false);
@@ -125,10 +131,16 @@ public class SampleController {
         autoCalcRq.setInsurance(insuranceDescription);
         autoCalcRq.setDrivers(driversDescription);
 
-        //model.addAttribute("calculate", autoCalcRq);
+        //HttpHeaders httpHeaders = restTemplate.headForHeaders("http://localhost:8080/calc");
+        //Assertions.assertTrue(httpHeaders.getContentType().includes(MediaType.APPLICATION_JSON));
 
-        //return ("calculate");
+        HttpHeaders headers = restTemplate.headForHeaders("http://localhost:8080/calc");;
+        headers.setContentType(MediaType.APPLICATION_JSON);
 
-        return(objectMapper.writeValueAsString(autoCalcRq));
+        String requiest = restTemplate.exchange("http://localhost:8080/calc", HttpMethod.GET,
+                new HttpEntity<>(objectMapper.writeValueAsString(autoCalcRq)),
+                String.class).getBody();
+
+        return(requiest);
     }
 }
