@@ -14,12 +14,19 @@ public class SecurityJa {
     public SecurityJa() {
     }
 
-    public Boolean getRecommended_puu() { return recommendedPuu; }
+    public Boolean getRecommendedPuu() {
+        return recommendedPuu;
+    }
 
-    public void setRecommended_puu(Boolean recommendedPuu) { this.recommendedPuu = recommendedPuu; }
+    public void setRecommendedPuu(Boolean recommendedPuu) {
+        this.recommendedPuu = recommendedPuu;
+    }
 
+    public Alarms getAlarms() {
+        return alarms;
+    }
 
-    public Alarms getAlarms() { return alarms; }
-
-    public void setAlarms(Alarms alarms) { this.alarms = alarms; }
+    public void setAlarms(Alarms alarms) {
+        this.alarms = alarms;
+    }
 }

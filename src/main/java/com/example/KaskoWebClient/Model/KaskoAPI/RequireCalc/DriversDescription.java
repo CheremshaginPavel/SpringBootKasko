@@ -28,32 +28,51 @@ public class DriversDescription {
     public DriversDescription() {
     }
 
-    public Integer getTransport_usage() { return transportUsage; }
+    public Boolean getMultidrive() {
+        return multidrive;
+    }
 
-    public void setTransport_usage(Integer transportUsage) { this.transportUsage = transportUsage; }
+    public void setMultidrive(Boolean multidrive) {
+        this.multidrive = multidrive;
+    }
 
-    public Boolean getInsurer_workers_flag() { return insurerWorkersFlag; }
+    public Boolean getInsurerWorkersFlag() {
+        return insurerWorkersFlag;
+    }
 
-    public void setInsurer_workers_flag(Boolean insurerWorkersFlag) { this.insurerWorkersFlag = insurerWorkersFlag; }
+    public void setInsurerWorkersFlag(Boolean insurerWorkersFlag) {
+        this.insurerWorkersFlag = insurerWorkersFlag;
+    }
 
-//    public Boolean getFlag_multidrive() { return flag_multidrive; }
-//
-//    public void setFlag_multidrive(Boolean flag_multidrive) { this.flag_multidrive = flag_multidrive; }
+    public Integer getTransportUsage() {
+        return transportUsage;
+    }
 
-    public Boolean getOther_workers_flag() { return otherWorkersFlag; }
+    public void setTransportUsage(Integer transportUsage) {
+        this.transportUsage = transportUsage;
+    }
 
-    public void setOther_workers_flag(Boolean otherWorkersFlag) { this.otherWorkersFlag = otherWorkersFlag; }
+    public Boolean getOtherMultidriveFlag() {
+        return otherMultidriveFlag;
+    }
 
-    public Boolean getOther_multidrive_flag() { return otherMultidriveFlag; }
+    public void setOtherMultidriveFlag(Boolean otherMultidriveFlag) {
+        this.otherMultidriveFlag = otherMultidriveFlag;
+    }
 
-    public void setOther_multidrive_flag(Boolean otherMultidriveFlag) { this.otherMultidriveFlag = otherMultidriveFlag; }
+    public Integer getMultidriveType() {
+        return multidriveType;
+    }
 
-    public Boolean getMultidrive() { return multidrive; }
+    public void setMultidriveType(Integer multidriveType) {
+        this.multidriveType = multidriveType;
+    }
 
-    public void setMultidrive(Boolean multidrive) { this.multidrive = multidrive; }
+    public Boolean getOtherWorkersFlag() {
+        return otherWorkersFlag;
+    }
 
-    public Integer getMultidrive_type() { return multidriveType; }
-
-    public void setMultidrive_type(Integer multidriveType) { this.multidriveType = multidriveType; }
-
+    public void setOtherWorkersFlag(Boolean otherWorkersFlag) {
+        this.otherWorkersFlag = otherWorkersFlag;
+    }
 }

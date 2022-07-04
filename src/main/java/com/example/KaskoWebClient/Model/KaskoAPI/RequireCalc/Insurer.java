@@ -23,24 +23,43 @@ public class Insurer {
     public Insurer() {
     }
 
-    public String getGender() { return gender; }
+    public String getGender() {
+        return gender;
+    }
 
-    public void setGender(String gender) { this.gender = gender; }
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
-    public Date getDate_of_birth() { return dateOfBirth; }
+    public Date getDateOfBirth() {
+        return dateOfBirth;
+    }
 
-    public void setDate_of_birth(Date dateOfBirth) { this.dateOfBirth = dateOfBirth; }
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
 
-    public String getFirst_name() { return firstName; }
+    public String getFirstName() {
+        return firstName;
+    }
 
-    public void setFirst_name(String firstName) { this.firstName = firstName; }
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-    public String getLast_name() { return lastName; }
+    public String getLastName() {
+        return lastName;
+    }
 
-    public void setLast_name(String lastName) { this.lastName = lastName; }
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
-    public String getMiddle_name() { return middleName; }
+    public String getMiddleName() {
+        return middleName;
+    }
 
-    public void setMiddle_name(String middleName) { this.middleName = middleName; }
-
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
 }

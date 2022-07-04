@@ -13,11 +13,19 @@ public class CreditBank {
     public CreditBank() {
     }
 
-    public String getBank_name() { return bankName; }
+    public String getBankName() {
+        return bankName;
+    }
 
-    public void setBank_name(String bank_name) { this.bankName = bankName; }
+    public void setBankName(String bankName) {
+        this.bankName = bankName;
+    }
 
-    public String getBank_id() { return bankId; }
+    public String getBankId() {
+        return bankId;
+    }
 
-    public void setBank_id(String bankId) { this.bankId = bankId; }
+    public void setBankId(String bankId) {
+        this.bankId = bankId;
+    }
 }

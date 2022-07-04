@@ -7,7 +7,11 @@ public class Options {
     public Options() {
     }
 
-    public Option getOption() { return option; }
+    public Option getOption() {
+        return option;
+    }
 
-    public void setOption(Option option) { this.option = option; }
+    public void setOption(Option option) {
+        this.option = option;
+    }
 }

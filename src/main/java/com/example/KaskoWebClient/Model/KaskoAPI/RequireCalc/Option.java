@@ -31,37 +31,67 @@ public class Option {
     public Option() {
     }
 
-    public Integer getOption_id() { return optionId; }
+    public Integer getOptionId() {
+        return optionId;
+    }
 
-    public void setOption_id(Integer optionId) { this.optionId = optionId; }
+    public void setOptionId(Integer optionId) {
+        this.optionId = optionId;
+    }
 
-    public String getOption_name() { return optionName; }
+    public String getOptionName() {
+        return optionName;
+    }
 
-    public void setOption_name(String optionName) { this.optionName = optionName; }
+    public void setOptionName(String optionName) {
+        this.optionName = optionName;
+    }
 
-    public Integer getRisk_id() { return riskId; }
+    public Integer getRiskId() {
+        return riskId;
+    }
 
-    public void setRisk_id(Integer riskId) { this.riskId = riskId; }
+    public void setRiskId(Integer riskId) {
+        this.riskId = riskId;
+    }
 
-    public Integer getOption_group_id() { return optionGroupId; }
+    public Integer getOptionGroupId() {
+        return optionGroupId;
+    }
 
-    public void setOption_group_id(Integer optionGroupId) { this.optionGroupId = optionGroupId; }
+    public void setOptionGroupId(Integer optionGroupId) {
+        this.optionGroupId = optionGroupId;
+    }
 
-    public Boolean getGroup_option_required() { return groupOptionRequired; }
+    public Boolean getGroupOptionRequired() {
+        return groupOptionRequired;
+    }
 
-    public void setGroup_option_required(Boolean groupOptionRequired)
-    { this.groupOptionRequired = groupOptionRequired; }
+    public void setGroupOptionRequired(Boolean groupOptionRequired) {
+        this.groupOptionRequired = groupOptionRequired;
+    }
 
-    public Boolean getGroup_option_ex() { return groupOptionEx; }
+    public Boolean getGroupOptionEx() {
+        return groupOptionEx;
+    }
 
-    public void setGroup_option_ex(Boolean groupOptionEx) { this.groupOptionEx = groupOptionEx; }
+    public void setGroupOptionEx(Boolean groupOptionEx) {
+        this.groupOptionEx = groupOptionEx;
+    }
 
-    public Integer getOption_number() { return optionNumber; }
+    public Integer getOptionNumber() {
+        return optionNumber;
+    }
 
-    public void setOption_number(Integer optionNumber) { this.optionNumber = optionNumber; }
+    public void setOptionNumber(Integer optionNumber) {
+        this.optionNumber = optionNumber;
+    }
 
-    public Integer getOption_value() { return optionValue; }
+    public Integer getOptionValue() {
+        return optionValue;
+    }
 
-    public void setOption_value(Integer optionValue) { this.optionValue = optionValue; }
-
+    public void setOptionValue(Integer optionValue) {
+        this.optionValue = optionValue;
+    }
 }

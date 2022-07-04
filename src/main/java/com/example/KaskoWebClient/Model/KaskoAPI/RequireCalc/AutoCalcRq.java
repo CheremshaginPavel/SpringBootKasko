@@ -3,6 +3,8 @@ package com.example.KaskoWebClient.Model.KaskoAPI.RequireCalc;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
+import java.util.Date;
+
 @JsonRootName("autoCalcRq")
 public class AutoCalcRq {
 
@@ -13,7 +15,7 @@ public class AutoCalcRq {
     private String calcType;
 
     @JsonProperty("calc_date")
-    private String calcDate;
+    private Date calcDate;
 
     @JsonProperty("model_selection")
     private Boolean modelSelection;
@@ -39,45 +41,83 @@ public class AutoCalcRq {
     public AutoCalcRq() {
     }
 
-    public String getPartner_pin() { return partnerPin; }
+    public String getPartnerPin() {
+        return partnerPin;
+    }
 
-    public void setPartner_pin(String partnerPin) { this.partnerPin = partnerPin; }
+    public void setPartnerPin(String partnerPin) {
+        this.partnerPin = partnerPin;
+    }
 
-    public String getCalc_type() { return calcType; }
+    public String getCalcType() {
+        return calcType;
+    }
 
-    public void setCalc_type(String calcType) { this.calcType = calcType; }
+    public void setCalcType(String calcType) {
+        this.calcType = calcType;
+    }
 
-    public String getCalc_date() { return calcDate; }
+    public Date getCalcDate() {
+        return calcDate;
+    }
 
-    public void setCalc_date(String calcDate) { this.calcDate = calcDate; }
+    public void setCalcDate(Date calcDate) {
+        this.calcDate = calcDate;
+    }
 
-    public Boolean getModel_selection() { return modelSelection; }
+    public Boolean getModelSelection() {
+        return modelSelection;
+    }
 
-    public void setModel_selection(Boolean modelSection) { this.modelSelection = modelSection; }
+    public void setModelSelection(Boolean modelSelection) {
+        this.modelSelection = modelSelection;
+    }
 
-    public Integer getExpress_quotation_id() { return expressQuotationId; }
+    public String getFactor() {
+        return factor;
+    }
 
-    public void setExpress_quotation_id(Integer expressQuotationId)
-    { this.expressQuotationId = expressQuotationId; }
+    public void setFactor(String factor) {
+        this.factor = factor;
+    }
 
-    public String getRegion_id() { return regionId; }
+    public Integer getExpressQuotationId() {
+        return expressQuotationId;
+    }
 
-    public void setRegion_id(String regionId) { this.regionId = regionId; }
+    public void setExpressQuotationId(Integer expressQuotationId) {
+        this.expressQuotationId = expressQuotationId;
+    }
 
-    public String getFactor() { return factor; }
+    public String getRegionId() {
+        return regionId;
+    }
 
-    public void setFactor(String factor) { this.factor = factor; }
+    public void setRegionId(String regionId) {
+        this.regionId = regionId;
+    }
 
-    public AutoDescription getAuto() { return auto; }
+    public AutoDescription getAuto() {
+        return auto;
+    }
 
-    public void setAuto(AutoDescription auto) { this.auto = auto; }
+    public void setAuto(AutoDescription auto) {
+        this.auto = auto;
+    }
 
-    public InsuranceDescription getInsurance() { return insurance; }
+    public InsuranceDescription getInsurance() {
+        return insurance;
+    }
 
-    public void setInsurance(InsuranceDescription insurance) { this.insurance = insurance; }
+    public void setInsurance(InsuranceDescription insurance) {
+        this.insurance = insurance;
+    }
 
-    public DriversDescription getDrivers() { return drivers; }
+    public DriversDescription getDrivers() {
+        return drivers;
+    }
 
-    public void setDrivers(DriversDescription drivers) { this.drivers = drivers; }
-
+    public void setDrivers(DriversDescription drivers) {
+        this.drivers = drivers;
+    }
 }

@@ -66,79 +66,155 @@ public class ModelDescription {
     public ModelDescription() {
     }
 
-    public Boolean getTachograph() { return tachograph; }
+    public Boolean getTachograph() {
+        return tachograph;
+    }
 
-    public void setTachograph(Boolean tachograph) { this.tachograph = tachograph; }
+    public void setTachograph(Boolean tachograph) {
+        this.tachograph = tachograph;
+    }
 
-    public String getCategory() { return category; }
+    public String getCategory() {
+        return category;
+    }
 
-    public void setCategory(String category) { this.category = category; }
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
-    public Integer getPrefix_com_ts_id() { return prefixComTsId; }
+    public Integer getPrefixComTsId() {
+        return prefixComTsId;
+    }
 
-    public void setPrefix_com_ts_id(Integer prefixComTsId) { this.prefixComTsId = prefixComTsId; }
+    public void setPrefixComTsId(Integer prefixComTsId) {
+        this.prefixComTsId = prefixComTsId;
+    }
 
-    public String getPrefix_com_ts_name() { return prefixComTsName; }
+    public String getPrefixComTsName() {
+        return prefixComTsName;
+    }
 
-    public void setPrefix_com_ts_name(String prefixComTsName) { this.prefixComTsName = prefixComTsName; }
+    public void setPrefixComTsName(String prefixComTsName) {
+        this.prefixComTsName = prefixComTsName;
+    }
 
-    public Integer getType_com_ts_id() { return typeComTsId; }
+    public Integer getTypeComTsId() {
+        return typeComTsId;
+    }
 
-    public void setType_com_ts_id(Integer typeComTsId) { this.typeComTsId = typeComTsId; }
+    public void setTypeComTsId(Integer typeComTsId) {
+        this.typeComTsId = typeComTsId;
+    }
 
-    public String getType_com_ts_name() { return typeComTsName; }
+    public String getTypeComTsName() {
+        return typeComTsName;
+    }
 
-    public void setType_com_ts_name(String typeComTsName) { this.typeComTsName = typeComTsName; }
+    public void setTypeComTsName(String typeComTsName) {
+        this.typeComTsName = typeComTsName;
+    }
 
-    public Boolean getAnother_mm() { return anotherMm; }
+    public Boolean getAnotherMm() {
+        return anotherMm;
+    }
 
-    public void setAnother_mm(Boolean anotherMm) { this.anotherMm = anotherMm; }
+    public void setAnotherMm(Boolean anotherMm) {
+        this.anotherMm = anotherMm;
+    }
 
-    public String getAnother_mark_name() { return anotherMarkName; }
+    public String getAnotherMarkName() {
+        return anotherMarkName;
+    }
 
-    public void setAnother_mark_name(String anotherMarkName) { this.anotherMarkName = anotherMarkName; }
+    public void setAnotherMarkName(String anotherMarkName) {
+        this.anotherMarkName = anotherMarkName;
+    }
 
-    public String getAnother_model_name() { return anotherModelName; }
+    public String getAnotherModelName() {
+        return anotherModelName;
+    }
 
-    public void setAnother_model_name(String anotherModelName) { this.anotherModelName = anotherModelName; }
+    public void setAnotherModelName(String anotherModelName) {
+        this.anotherModelName = anotherModelName;
+    }
 
-    public String getMile_age() { return mileAge; }
+    public String getMileAge() {
+        return mileAge;
+    }
 
-    public void setMile_age(String mileAge) { this.mileAge = mileAge; }
+    public void setMileAge(String mileAge) {
+        this.mileAge = mileAge;
+    }
 
-    public String getMark_name() { return markName; }
+    public String getMarkName() {
+        return markName;
+    }
 
-    public void setMark_name(String markName) { this.markName = markName; }
+    public void setMarkName(String markName) {
+        this.markName = markName;
+    }
 
-    public String getMark_id() { return markId; }
+    public String getMarkId() {
+        return markId;
+    }
 
-    public void setMark_id(String markId) { this.markId = markId; }
+    public void setMarkId(String markId) {
+        this.markId = markId;
+    }
 
-    public String getModel_name() { return modelName; }
+    public String getModelName() {
+        return modelName;
+    }
 
-    public void setModel_name(String modelName) { this.modelName = modelName; }
+    public void setModelName(String modelName) {
+        this.modelName = modelName;
+    }
 
-        public String getModel_id() { return modelId; }
+    public String getModelId() {
+        return modelId;
+    }
 
-    public void setModel_id(String modelId) { this.modelId = modelId; }
+    public void setModelId(String modelId) {
+        this.modelId = modelId;
+    }
 
-    public String getHorsepower() { return horsepower; }
+    public String getHorsepower() {
+        return horsepower;
+    }
 
-    public void setHorsepower(String horsepower) { this.horsepower = horsepower; }
+    public void setHorsepower(String horsepower) {
+        this.horsepower = horsepower;
+    }
 
-    public String getYear() { return year; }
+    public String getYear() {
+        return year;
+    }
 
-    public void setYear(String year) { this.year = year; }
+    public void setYear(String year) {
+        this.year = year;
+    }
 
-    public SterringWheel getSterring_wheel() { return sterringWheel; }
+    public SterringWheel getSterringWheel() {
+        return sterringWheel;
+    }
 
-    public void setSterring_wheel(SterringWheel sterringWheel) { this.sterringWheel = sterringWheel; }
+    public void setSterringWheel(SterringWheel sterringWheel) {
+        this.sterringWheel = sterringWheel;
+    }
 
-    public Boolean getTs_new() { return tsNew; }
+    public Boolean getTsNew() {
+        return tsNew;
+    }
 
-    public void setTs_new(Boolean tsNew) { this.tsNew = tsNew; }
+    public void setTsNew(Boolean tsNew) {
+        this.tsNew = tsNew;
+    }
 
-    public SecurityJa getSecurity_ja() { return securityJa; }
+    public SecurityJa getSecurityJa() {
+        return securityJa;
+    }
 
-    public void setSecurity_ja(SecurityJa securityJa) { this.securityJa = securityJa; }
+    public void setSecurityJa(SecurityJa securityJa) {
+        this.securityJa = securityJa;
+    }
 }

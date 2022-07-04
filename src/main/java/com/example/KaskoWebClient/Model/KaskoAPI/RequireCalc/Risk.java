@@ -19,19 +19,35 @@ public class Risk {
     public Risk() {
     }
 
-    public Integer getRisk_id() { return riskId; }
+    public Integer getRiskId() {
+        return riskId;
+    }
 
-    public void setRisk_id(Integer riskId) { this.riskId = riskId; }
+    public void setRiskId(Integer riskId) {
+        this.riskId = riskId;
+    }
 
-    public Boolean getBank_required() { return bankRequired; }
+    public Boolean getBankRequired() {
+        return bankRequired;
+    }
 
-    public void setBank_required(Boolean bankRequired) { this.bankRequired = bankRequired; }
+    public void setBankRequired(Boolean bankRequired) {
+        this.bankRequired = bankRequired;
+    }
 
-    public Boolean getCode_required() { return codeRequired; }
+    public Boolean getCodeRequired() {
+        return codeRequired;
+    }
 
-    public void setCode_required(Boolean codeRequired) { this.codeRequired = codeRequired; }
+    public void setCodeRequired(Boolean codeRequired) {
+        this.codeRequired = codeRequired;
+    }
 
-    public InsuredSumm getInsured_summ() { return insuredSumm; }
+    public InsuredSumm getInsuredSumm() {
+        return insuredSumm;
+    }
 
-    public void setInsured_summ(InsuredSumm insuredSumm) { this.insuredSumm = insuredSumm; }
+    public void setInsuredSumm(InsuredSumm insuredSumm) {
+        this.insuredSumm = insuredSumm;
+    }
 }

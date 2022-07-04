@@ -10,7 +10,11 @@ public class InsuredSumm {
     public InsuredSumm() {
     }
 
-    public String getSum() { return sum; }
+    public String getSum() {
+        return sum;
+    }
 
-    public void setSum(String sum) { this.sum = sum; }
+    public void setSum(String sum) {
+        this.sum = sum;
+    }
 }

@@ -2,22 +2,32 @@ package com.example.KaskoWebClient.Model.KaskoAPI.RequireCalc;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.List;
+
 public class Risks {
 
     @JsonProperty("risk_name")
     private String riskName;
 
     @JsonProperty("risk")
-    private Risk risk;
+    private List<Risk> risk;
 
     public Risks() {
     }
 
-    public String getRisk_name() { return riskName; }
+    public String getRiskName() {
+        return riskName;
+    }
 
-    public void setRisk_name(String riskName) { this.riskName = riskName; }
+    public void setRiskName(String riskName) {
+        this.riskName = riskName;
+    }
 
-    public Risk getRisk() { return risk; }
+    public List<Risk> getRisk() {
+        return risk;
+    }
 
-    public void setRisk(Risk risk) { this.risk = risk; }
+    public void setRisk(List<Risk> risk) {
+        this.risk = risk;
+    }
 }

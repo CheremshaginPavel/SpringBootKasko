@@ -22,24 +22,43 @@ public class Driver {
     public Driver() {
     }
 
-    public String getAge() { return age; }
+    public String getAge() {
+        return age;
+    }
 
-    public void setAge(String age) { this.age = age; }
+    public void setAge(String age) {
+        this.age = age;
+    }
 
-    public String getExperience() { return experience; }
+    public String getExperience() {
+        return experience;
+    }
 
-    public void setExperience(String experience) { this.experience = experience; }
+    public void setExperience(String experience) {
+        this.experience = experience;
+    }
 
-    public String getGender() { return gender; }
+    public String getGender() {
+        return gender;
+    }
 
-    public void setGender(String gender) { this.gender = gender; }
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
-    public String getRegion_registration_id() { return regionRegistrationId; }
+    public String getRegionRegistrationId() {
+        return regionRegistrationId;
+    }
 
-    public void setRegion_registration_id(String regionRegistrationId)
-    { this.regionRegistrationId = regionRegistrationId; }
+    public void setRegionRegistrationId(String regionRegistrationId) {
+        this.regionRegistrationId = regionRegistrationId;
+    }
 
-    public Boolean getResident() { return resident; }
+    public Boolean getResident() {
+        return resident;
+    }
 
-    public void setResident(Boolean resident) { this.resident = resident; }
+    public void setResident(Boolean resident) {
+        this.resident = resident;
+    }
 }

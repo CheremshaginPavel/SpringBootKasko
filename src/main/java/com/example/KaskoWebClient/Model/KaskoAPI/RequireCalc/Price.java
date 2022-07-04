@@ -13,12 +13,19 @@ public class Price {
     public Price() {
     }
 
-    public String getCurrency() { return currency; }
+    public String getSum() {
+        return sum;
+    }
 
-    public void setCurrency(String currency) { this.currency = currency; }
+    public void setSum(String sum) {
+        this.sum = sum;
+    }
 
-    public String getSum() { return sum; }
+    public String getCurrency() {
+        return currency;
+    }
 
-    public void setSum(String sum) { this.sum = sum; }
-
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
 }

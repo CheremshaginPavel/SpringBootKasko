@@ -46,56 +46,107 @@ public class InsuranceDescription {
     public InsuranceDescription() {
     }
 
-    public String getKv_size() { return kvSize; }
+    public String getKvSize() {
+        return kvSize;
+    }
 
-    public void setKv_size(String kv_size) { this.kvSize = kvSize; }
+    public void setKvSize(String kvSize) {
+        this.kvSize = kvSize;
+    }
 
-    public String getProductId() { return productId; }
+    public String getProductId() {
+        return productId;
+    }
 
-    public void setProductId(String productId) { this.productId = productId; }
+    public void setProductId(String productId) {
+        this.productId = productId;
+    }
 
-    public Integer getContract_id() { return contractId; }
+    public Integer getContractId() {
+        return contractId;
+    }
 
-    public void setContract_id(Integer contractId) { this.contractId = contractId; }
+    public void setContractId(Integer contractId) {
+        this.contractId = contractId;
+    }
 
-    public Integer getTemp_insurance() { return termInsurance; }
+    public Integer getTermInsurance() {
+        return termInsurance;
+    }
 
-    public void setTemp_insurance(Integer term_insurance) { this.termInsurance = termInsurance; }
+    public void setTermInsurance(Integer termInsurance) {
+        this.termInsurance = termInsurance;
+    }
 
-    public Boolean getSpecial_program() { return specialProgram; }
+    public Boolean getSpecialProgram() {
+        return specialProgram;
+    }
 
-    public void setSpecial_program(Boolean specialProgram) { this.specialProgram = specialProgram; }
+    public void setSpecialProgram(Boolean specialProgram) {
+        this.specialProgram = specialProgram;
+    }
 
-    public Integer getFranchise_id() { return franchiseId; }
+    public Risks getRisks() {
+        return risks;
+    }
 
-    public void setFranchise_id(Integer franchiseId) { this.franchiseId = franchiseId; }
+    public void setRisks(Risks risks) {
+        this.risks = risks;
+    }
 
-    public Boolean getDeprecation() { return deprecation; }
+    public Options getOptions() {
+        return options;
+    }
 
-    public void setDeprecation(Boolean deprecation) { this.deprecation = deprecation; }
+    public void setOptions(Options options) {
+        this.options = options;
+    }
 
-    public String getRegion() { return region; }
+    public Integer getFranchiseId() {
+        return franchiseId;
+    }
 
-    public void setRegion(String region) { this.region = region; }
+    public void setFranchiseId(Integer franchiseId) {
+        this.franchiseId = franchiseId;
+    }
 
-    public Integer getReimbursement() { return reimbursement; }
+    public Boolean getDeprecation() {
+        return deprecation;
+    }
 
-    public void setReimbursement(Integer reimbursement) { this.reimbursement = reimbursement; }
+    public void setDeprecation(Boolean deprecation) {
+        this.deprecation = deprecation;
+    }
 
-    public Integer getPayment_plan_id() { return paymentPlanId; }
+    public String getRegion() {
+        return region;
+    }
 
-    public void setPayment_plan_id(Integer paymentPlanId) { this.paymentPlanId = paymentPlanId; }
+    public void setRegion(String region) {
+        this.region = region;
+    }
 
-    public Risks getRisks() { return risks; }
+    public Integer getReimbursement() {
+        return reimbursement;
+    }
 
-    public void setRisks(Risks risks) { this.risks = risks; }
+    public void setReimbursement(Integer reimbursement) {
+        this.reimbursement = reimbursement;
+    }
 
-    public Options getOptions() { return options; }
+    public Integer getPaymentPlanId() {
+        return paymentPlanId;
+    }
 
-    public void setOptions(Options options) { this.options = options; }
+    public void setPaymentPlanId(Integer paymentPlanId) {
+        this.paymentPlanId = paymentPlanId;
+    }
 
-    public String getFranchise() { return franchise; }
+    public String getFranchise() {
+        return franchise;
+    }
 
-    public void setFranchise(String franchise) { this.franchise = franchise; }
-
+    public void setFranchise(String franchise) {
+        this.franchise = franchise;
+    }
 }

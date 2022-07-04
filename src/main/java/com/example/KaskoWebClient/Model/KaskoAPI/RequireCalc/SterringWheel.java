@@ -10,7 +10,11 @@ public class SterringWheel {
     SterringWheel() {
     }
 
-    public String getSide() { return side; }
+    public String getSide() {
+        return side;
+    }
 
-    public void setSide(String side) { this.side = side; }
+    public void setSide(String side) {
+        this.side = side;
+    }
 }

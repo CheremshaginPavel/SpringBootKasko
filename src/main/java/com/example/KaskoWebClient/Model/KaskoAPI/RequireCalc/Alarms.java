@@ -19,20 +19,35 @@ public class Alarms {
     public Alarms() {
     }
 
-    public String getAlarm_type_name() { return alarmTypeName; }
+    public String getAlarmTypeName() {
+        return alarmTypeName;
+    }
 
-    public void setAlarm_type_name(String alarmTypeName) { this.alarmTypeName = alarmTypeName; }
+    public void setAlarmTypeName(String alarmTypeName) {
+        this.alarmTypeName = alarmTypeName;
+    }
 
-    public Integer getAlarm_type_id() { return alarmTypeId; }
+    public Integer getAlarmTypeId() {
+        return alarmTypeId;
+    }
 
-    public void setAlarm_type_id(Integer alarmTypeId) { this.alarmTypeId = alarmTypeId; }
+    public void setAlarmTypeId(Integer alarmTypeId) {
+        this.alarmTypeId = alarmTypeId;
+    }
 
-    public String getName() { return name; }
+    public String getName() {
+        return name;
+    }
 
-    public void setName(String name) { this.name = name; }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    public Integer getId() { return id; }
+    public Integer getId() {
+        return id;
+    }
 
-    public void setId(Integer id) { this.id = id; }
-
+    public void setId(Integer id) {
+        this.id = id;
+    }
 }
