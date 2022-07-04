@@ -1,4 +1,4 @@
-package com.example.KaskoWebClient.Model.KaskoAPI.RequireCalc.price;
+package com.example.KaskoWebClient.Model.KaskoAPI.RequireCalc;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

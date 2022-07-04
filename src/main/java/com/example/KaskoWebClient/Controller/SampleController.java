@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.List;
 
 @Controller
-@RestController
+//@RestController
 public class SampleController {
 
     @GetMapping("/sample")
@@ -29,15 +29,17 @@ public class SampleController {
 
     @GetMapping("/products")
     public ModelAndView listProduct(Model model) throws IOException {
-        final String url = "https://testout.sovcomins.ru/casco/cartest/get_products";
         RestTemplate restTemplate = new RestTemplate();
-		Products products = restTemplate.getForObject(url, Products.class);
+		Products products = null;
+        products = restTemplate.getForObject(products.getUrl(), Products.class);
         model.addAttribute("products", products);
         return new ModelAndView("product");
     }
 
     @GetMapping("/calc")
-    public ModelAndView calculate(Model model) throws IOException {
-        return new ModelAndView("calculate");
+    public String calculate(Model model) throws IOException {
+
+
+        return ("calculate");
     }
 }

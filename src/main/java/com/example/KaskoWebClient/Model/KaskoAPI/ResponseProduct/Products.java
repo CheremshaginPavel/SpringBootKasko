@@ -8,6 +8,8 @@ public class Products {
     @JsonProperty("kasko-product")
     private List<Product> products;
 
+    private final String url = "https://testout.sovcomins.ru/casco/cartest/get_products";
+
     public Products() {
     }
 
@@ -19,4 +21,5 @@ public class Products {
         this.products = products;
     }
 
+    public String getUrl() { return url; }
 }

@@ -1,11 +1,11 @@
-package com.example.KaskoWebClient.Model.KaskoAPI.RequireCalc.insurance.secondLayers;
+package com.example.KaskoWebClient.Model.KaskoAPI.RequireCalc;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Risks {
 
     @JsonProperty("risk_name")
-    private String risk_name;
+    private String riskName;
 
     @JsonProperty("risk")
     private Risk risk;
@@ -13,9 +13,9 @@ public class Risks {
     public Risks() {
     }
 
-    public String getRisk_name() { return risk_name; }
+    public String getRisk_name() { return riskName; }
 
-    public void setRisk_name(String risk_name) { this.risk_name = risk_name; }
+    public void setRisk_name(String riskName) { this.riskName = riskName; }
 
     public Risk getRisk() { return risk; }
 

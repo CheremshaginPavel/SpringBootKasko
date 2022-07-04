@@ -1,8 +1,8 @@
-package com.example.KaskoWebClient.Model.KaskoAPI.RequireCalc.drivers;
+package com.example.KaskoWebClient.Model.KaskoAPI.RequireCalc;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class driver {
+public class Driver {
 
     @JsonProperty("age")
     private String age;
@@ -14,12 +14,12 @@ public class driver {
     private String gender;
 
     @JsonProperty("region_registration_id")
-    private String region_registration_id;
+    private String regionRegistrationId;
 
     @JsonProperty("resident")
     private Boolean resident;
 
-    public driver() {
+    public Driver() {
     }
 
     public String getAge() { return age; }
@@ -34,10 +34,10 @@ public class driver {
 
     public void setGender(String gender) { this.gender = gender; }
 
-    public String getRegion_registration_id() { return region_registration_id; }
+    public String getRegion_registration_id() { return regionRegistrationId; }
 
-    public void setRegion_registration_id(String region_registration_id)
-    { this.region_registration_id = region_registration_id; }
+    public void setRegion_registration_id(String regionRegistrationId)
+    { this.regionRegistrationId = regionRegistrationId; }
 
     public Boolean getResident() { return resident; }
 

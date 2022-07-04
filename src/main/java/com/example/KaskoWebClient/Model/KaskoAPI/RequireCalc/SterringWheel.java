@@ -1,4 +1,4 @@
-package com.example.KaskoWebClient.Model.KaskoAPI.RequireCalc.auto.secondLayers.thirdLayers;
+package com.example.KaskoWebClient.Model.KaskoAPI.RequireCalc;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

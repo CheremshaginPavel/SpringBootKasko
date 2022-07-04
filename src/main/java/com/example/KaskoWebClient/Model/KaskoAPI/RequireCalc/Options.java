@@ -1,4 +1,4 @@
-package com.example.KaskoWebClient.Model.KaskoAPI.RequireCalc.insurance.secondLayers;
+package com.example.KaskoWebClient.Model.KaskoAPI.RequireCalc;
 
 public class Options {
 
