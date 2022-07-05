@@ -1,6 +1,7 @@
 package com.example.KaskoWebClient.Controller;
 
 import com.example.KaskoWebClient.Model.KaskoAPI.RequireCalc.*;
+import com.example.KaskoWebClient.Model.KaskoAPI.ResponseCalc.AutoCalcRS;
 import com.example.KaskoWebClient.Model.KaskoAPI.ResponseProduct.Products;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -48,7 +49,7 @@ public class SampleController {
     }
 
     @GetMapping("/calc")
-    public String calculate(Model model) throws IOException, ParseException {
+    public AutoCalcRS calculate(Model model) throws IOException, ParseException {
         AutoCalcRq autoCalcRq = new AutoCalcRq();
 
         autoCalcRq.setPartnerPin("cartest");
@@ -141,19 +142,17 @@ public class SampleController {
         autoCalcRq.setInsurance(insuranceDescription);
         autoCalcRq.setDrivers(driversDescription);
 
-        //HttpHeaders httpHeaders = restTemplate.headForHeaders("http://localhost:8080/calc");
-        //Assertions.assertTrue(httpHeaders.getContentType().includes(MediaType.APPLICATION_JSON));
-
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         objectMapper.enable(SerializationFeature.WRAP_ROOT_VALUE);
         HttpEntity<String> request = new HttpEntity<>(objectMapper.writeValueAsString(autoCalcRq), headers);
+        AutoCalcRS autoCalcRS = new AutoCalcRS();
 
-        String response = restTemplate.exchange("https://testout.sovcomins.ru/casco/cartest/calc",
+        AutoCalcRS response = restTemplate.exchange("https://testout.sovcomins.ru/casco/cartest/calc",
                 HttpMethod.POST,
                 request,
-                String.class).getBody();
+                AutoCalcRS.class).getBody();
 
         return(response);
     }
