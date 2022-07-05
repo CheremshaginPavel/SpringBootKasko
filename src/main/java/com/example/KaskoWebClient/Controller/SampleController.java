@@ -50,13 +50,10 @@ public class SampleController {
     @GetMapping("/calc")
     public String calculate(Model model) throws IOException, ParseException {
         AutoCalcRq autoCalcRq = new AutoCalcRq();
-        CurrentDate date = new CurrentDate();
-//        Date data = new Date();
-//        date.setCurrentDate(data);
 
         autoCalcRq.setPartnerPin("cartest");
         autoCalcRq.setCalcType("KASKO");
-        autoCalcRq.setCalcDate(date.getCurrentDate());
+        autoCalcRq.setCalcDate(new Date());
         autoCalcRq.setExpressQuotationId(5768484);
 
         AutoDescription auto = new AutoDescription();

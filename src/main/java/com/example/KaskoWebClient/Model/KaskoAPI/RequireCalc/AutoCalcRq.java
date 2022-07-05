@@ -1,5 +1,6 @@
 package com.example.KaskoWebClient.Model.KaskoAPI.RequireCalc;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
@@ -15,6 +16,7 @@ public class AutoCalcRq {
     private String calcType;
 
     @JsonProperty("calc_date")
+    @JsonFormat(pattern="dd-MM-yyyy HH:mm:ss")
     private Date calcDate;
 
     @JsonProperty("model_selection")
