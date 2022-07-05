@@ -22,8 +22,8 @@ public class DriversDescription {
     @JsonProperty("other_workers_flag")
     private Boolean otherWorkersFlag;
 
-//    @JsonProperty("flag_multidrive")
-//    private Boolean flag_multidrive;
+    @JsonProperty("driver")
+    private Driver driver;
 
     public DriversDescription() {
     }
@@ -74,5 +74,13 @@ public class DriversDescription {
 
     public void setOtherWorkersFlag(Boolean otherWorkersFlag) {
         this.otherWorkersFlag = otherWorkersFlag;
+    }
+
+    public Driver getDriver() {
+        return driver;
+    }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
     }
 }

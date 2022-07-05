@@ -16,6 +16,8 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.util.*;
 
@@ -46,12 +48,15 @@ public class SampleController {
     }
 
     @GetMapping("/calc")
-    public String calculate(Model model) throws IOException {
+    public String calculate(Model model) throws IOException, ParseException {
         AutoCalcRq autoCalcRq = new AutoCalcRq();
+        CurrentDate date = new CurrentDate();
+//        Date data = new Date();
+//        date.setCurrentDate(data);
 
         autoCalcRq.setPartnerPin("cartest");
         autoCalcRq.setCalcType("KASKO");
-        autoCalcRq.setCalcDate(Date.from(Instant.now()));
+        autoCalcRq.setCalcDate(date.getCurrentDate());
         autoCalcRq.setExpressQuotationId(5768484);
 
         AutoDescription auto = new AutoDescription();
@@ -91,7 +96,7 @@ public class SampleController {
         InsuranceDescription insuranceDescription = new InsuranceDescription();
 
         insuranceDescription.setKvSize("0");
-        insuranceDescription.setProductId("50547");
+        insuranceDescription.setProductId("17447");
         insuranceDescription.setContractId(1);
         insuranceDescription.setTermInsurance(36);
         insuranceDescription.setSpecialProgram(false);
@@ -127,6 +132,14 @@ public class SampleController {
         driversDescription.setOtherMultidriveFlag(true);
         driversDescription.setMultidrive(false);
         driversDescription.setMultidriveType(3);
+
+        Driver driver = new Driver();
+        driver.setAge("30");
+        driver.setExperience("12");
+        driver.setGender("MALE");
+        driver.setResident(true);
+        driver.setRegionRegistrationId("78");
+        driversDescription.setDriver(driver);
 
         autoCalcRq.setInsurance(insuranceDescription);
         autoCalcRq.setDrivers(driversDescription);
