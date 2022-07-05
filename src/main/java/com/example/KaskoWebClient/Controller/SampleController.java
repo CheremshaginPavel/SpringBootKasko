@@ -3,6 +3,7 @@ package com.example.KaskoWebClient.Controller;
 import com.example.KaskoWebClient.Model.KaskoAPI.RequireCalc.*;
 import com.example.KaskoWebClient.Model.KaskoAPI.ResponseProduct.Products;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -21,6 +22,7 @@ import java.util.*;
 //@Controller
 @RestController
 public class SampleController {
+    private final ObjectMapper objectMapper = new ObjectMapper();
 
     @GetMapping("/sample")
     public ModelAndView hello() {
@@ -45,8 +47,6 @@ public class SampleController {
 
     @GetMapping("/calc")
     public String calculate(Model model) throws IOException {
-        RestTemplate restTemplate = new RestTemplate();
-        ObjectMapper objectMapper = new ObjectMapper();
         AutoCalcRq autoCalcRq = new AutoCalcRq();
 
         autoCalcRq.setPartnerPin("cartest");
@@ -134,13 +134,17 @@ public class SampleController {
         //HttpHeaders httpHeaders = restTemplate.headForHeaders("http://localhost:8080/calc");
         //Assertions.assertTrue(httpHeaders.getContentType().includes(MediaType.APPLICATION_JSON));
 
-        HttpHeaders headers = restTemplate.headForHeaders("http://localhost:8080/calc");;
+        RestTemplate restTemplate = new RestTemplate();
+        HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
+        objectMapper.enable(SerializationFeature.WRAP_ROOT_VALUE);
+        HttpEntity<String> request = new HttpEntity<>(objectMapper.writeValueAsString(autoCalcRq), headers);
 
-        String requiest = restTemplate.exchange("http://localhost:8080/calc", HttpMethod.GET,
-                new HttpEntity<>(objectMapper.writeValueAsString(autoCalcRq)),
+        String response = restTemplate.exchange("https://testout.sovcomins.ru/casco/cartest/calc",
+                HttpMethod.POST,
+                request,
                 String.class).getBody();
 
-        return(requiest);
+        return(response);
     }
 }
