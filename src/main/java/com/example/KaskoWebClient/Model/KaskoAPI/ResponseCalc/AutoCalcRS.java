@@ -1,12 +1,8 @@
 package com.example.KaskoWebClient.Model.KaskoAPI.ResponseCalc;
 
-import com.example.KaskoWebClient.Model.KaskoAPI.RequireCalc.InsuranceDescription;
-import com.example.KaskoWebClient.Model.KaskoAPI.RequireCalc.Options;
-import com.example.KaskoWebClient.Model.KaskoAPI.RequireCalc.Risks;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonRootName;
 import java.util.Date;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -22,10 +18,10 @@ public class AutoCalcRS {
     private Integer territoryId;
 
     @JsonProperty("model_id")
-    private String modelId;
+    private Integer modelId;
 
     @JsonProperty("mark_id")
-    private String markId;
+    private Integer markId;
 
     @JsonProperty("mark_name")
     private String markName;
@@ -77,10 +73,10 @@ public class AutoCalcRS {
     private Options options;
 
     @JsonProperty("insurance")
-    private InsuranceDescription insuranceDescription;
+    private Insurance insurance;
 
     @JsonProperty("factor")
-    private Boolean factor;
+    private Double factor;
 
     @JsonProperty("warnings")
     private Warnings warnings;
@@ -89,15 +85,15 @@ public class AutoCalcRS {
     private String changedConditions;
 
     @JsonProperty("express_quotation_id")
-    private String expressQuotationId;
+    private Long expressQuotationId;
 
     @JsonProperty("express_quotation_url")
-    private String express_quotation_url;
+    private String expressQuotationUrl;
 
     @JsonProperty("calculation_id")
     private Long calculationId;
 
-    @JsonProperty("errors")
+    @JsonProperty("Errors")
     private Errors errors;
 
     public AutoCalcRS() {
@@ -127,19 +123,19 @@ public class AutoCalcRS {
         this.territoryId = territoryId;
     }
 
-    public String getModelId() {
+    public Integer getModelId() {
         return modelId;
     }
 
-    public void setModelId(String modelId) {
+    public void setModelId(Integer modelId) {
         this.modelId = modelId;
     }
 
-    public String getMarkId() {
+    public Integer getMarkId() {
         return markId;
     }
 
-    public void setMarkId(String markId) {
+    public void setMarkId(Integer markId) {
         this.markId = markId;
     }
 
@@ -255,14 +251,6 @@ public class AutoCalcRS {
         this.totalSumm = totalSumm;
     }
 
-    public Risks getRisks() {
-        return risks;
-    }
-
-    public void setRisks(Risks risks) {
-        this.risks = risks;
-    }
-
     public Options getOptions() {
         return options;
     }
@@ -271,19 +259,19 @@ public class AutoCalcRS {
         this.options = options;
     }
 
-    public InsuranceDescription getInsuranceDescription() {
-        return insuranceDescription;
+    public Insurance getInsurance() {
+        return insurance;
     }
 
-    public void setInsuranceDescription(InsuranceDescription insuranceDescription) {
-        this.insuranceDescription = insuranceDescription;
+    public void setInsurance(Insurance insurance) {
+        this.insurance = insurance;
     }
 
-    public Boolean getFactor() {
+    public Double getFactor() {
         return factor;
     }
 
-    public void setFactor(Boolean factor) {
+    public void setFactor(Double factor) {
         this.factor = factor;
     }
 
@@ -303,20 +291,20 @@ public class AutoCalcRS {
         this.changedConditions = changedConditions;
     }
 
-    public String getExpressQuotationId() {
+    public Long getExpressQuotationId() {
         return expressQuotationId;
     }
 
-    public void setExpressQuotationId(String expressQuotationId) {
+    public void setExpressQuotationId(Long expressQuotationId) {
         this.expressQuotationId = expressQuotationId;
     }
 
-    public String getExpress_quotation_url() {
-        return express_quotation_url;
+    public String getExpressQuotationUrl() {
+        return expressQuotationUrl;
     }
 
-    public void setExpress_quotation_url(String express_quotation_url) {
-        this.express_quotation_url = express_quotation_url;
+    public void setExpressQuotationUrl(String expressQuotationUrl) {
+        this.expressQuotationUrl = expressQuotationUrl;
     }
 
     public Long getCalculationId() {
@@ -335,4 +323,11 @@ public class AutoCalcRS {
         this.errors = errors;
     }
 
+    public Risks getRisks() {
+        return risks;
+    }
+
+    public void setRisks(Risks risks) {
+        this.risks = risks;
+    }
 }

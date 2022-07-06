@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class AutoCalcResponse {
     @JsonProperty("AutoCalcRS")
-    AutoCalcRS autoCalcRS;
+    private AutoCalcRS autoCalcRS;
 
     public AutoCalcResponse() {
     }
