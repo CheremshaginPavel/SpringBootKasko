@@ -16,7 +16,7 @@ public class AutoCalcRq {
     private String calcType;
 
     @JsonProperty("calc_date")
-    @JsonFormat(pattern="dd-MM-yyyy HH:mm:ss")
+    @JsonFormat(pattern="dd.MM.yyyy HH:mm:ss")
     private Date calcDate;
 
     @JsonProperty("model_selection")

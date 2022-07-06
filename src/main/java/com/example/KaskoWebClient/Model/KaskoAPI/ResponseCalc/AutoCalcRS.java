@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Date;
+import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AutoCalcRS {
@@ -67,10 +68,10 @@ public class AutoCalcRS {
     private TotalSumm totalSumm;
 
     @JsonProperty("risks")
-    private Risks risks;
+    private List<Risks> risks;
 
     @JsonProperty("options")
-    private Options options;
+    private List<Options> options;
 
     @JsonProperty("insurance")
     private Insurance insurance;
@@ -79,10 +80,10 @@ public class AutoCalcRS {
     private Double factor;
 
     @JsonProperty("warnings")
-    private Warnings warnings;
+    private List<Warnings> warnings;
 
     @JsonProperty("changed_conditions")
-    private String changedConditions;
+    private ChangedConditions changedConditions;
 
     @JsonProperty("express_quotation_id")
     private Long expressQuotationId;
@@ -251,11 +252,11 @@ public class AutoCalcRS {
         this.totalSumm = totalSumm;
     }
 
-    public Options getOptions() {
+    public List<Options> getOptions() {
         return options;
     }
 
-    public void setOptions(Options options) {
+    public void setOptions(List<Options> options) {
         this.options = options;
     }
 
@@ -275,20 +276,12 @@ public class AutoCalcRS {
         this.factor = factor;
     }
 
-    public Warnings getWarnings() {
+    public List<Warnings> getWarnings() {
         return warnings;
     }
 
-    public void setWarnings(Warnings warnings) {
+    public void setWarnings(List<Warnings> warnings) {
         this.warnings = warnings;
-    }
-
-    public String getChangedConditions() {
-        return changedConditions;
-    }
-
-    public void setChangedConditions(String changedConditions) {
-        this.changedConditions = changedConditions;
     }
 
     public Long getExpressQuotationId() {
@@ -323,11 +316,19 @@ public class AutoCalcRS {
         this.errors = errors;
     }
 
-    public Risks getRisks() {
+    public List<Risks> getRisks() {
         return risks;
     }
 
-    public void setRisks(Risks risks) {
+    public void setRisks(List<Risks> risks) {
         this.risks = risks;
+    }
+
+    public ChangedConditions getChangedConditions() {
+        return changedConditions;
+    }
+
+    public void setChangedConditions(ChangedConditions changedConditions) {
+        this.changedConditions = changedConditions;
     }
 }
