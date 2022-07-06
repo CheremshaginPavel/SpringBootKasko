@@ -4,11 +4,12 @@ import com.example.KaskoWebClient.Model.KaskoAPI.RequireCalc.InsuranceDescriptio
 import com.example.KaskoWebClient.Model.KaskoAPI.RequireCalc.Options;
 import com.example.KaskoWebClient.Model.KaskoAPI.RequireCalc.Risks;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import java.util.Date;
 
-@JsonRootName("AutoCalcRS")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class AutoCalcRS {
 
     @JsonProperty("transit")
@@ -63,7 +64,7 @@ public class AutoCalcRS {
     private String calcType;
 
     @JsonProperty("calc_date")
-    @JsonFormat(pattern="dd.MM.yyyy HH.mm.ss")
+    @JsonFormat(pattern="dd.MM.yyyy HH:mm:ss")
     private Date calcDate;
 
     @JsonProperty("total_summ")

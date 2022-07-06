@@ -2,6 +2,7 @@ package com.example.KaskoWebClient.Controller;
 
 import com.example.KaskoWebClient.Model.KaskoAPI.RequireCalc.*;
 import com.example.KaskoWebClient.Model.KaskoAPI.ResponseCalc.AutoCalcRS;
+import com.example.KaskoWebClient.Model.KaskoAPI.ResponseCalc.AutoCalcResponse;
 import com.example.KaskoWebClient.Model.KaskoAPI.ResponseProduct.Products;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -9,7 +10,6 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,11 +18,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.Instant;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
-//@Controller
 @RestController
 public class SampleController {
     private final ObjectMapper objectMapper = new ObjectMapper();
@@ -147,13 +146,12 @@ public class SampleController {
         headers.setContentType(MediaType.APPLICATION_JSON);
         objectMapper.enable(SerializationFeature.WRAP_ROOT_VALUE);
         HttpEntity<String> request = new HttpEntity<>(objectMapper.writeValueAsString(autoCalcRq), headers);
-        AutoCalcRS autoCalcRS = new AutoCalcRS();
 
-        AutoCalcRS response = restTemplate.exchange("https://testout.sovcomins.ru/casco/cartest/calc",
+        AutoCalcResponse response = restTemplate.exchange("https://testout.sovcomins.ru/casco/cartest/calc",
                 HttpMethod.POST,
                 request,
-                AutoCalcRS.class).getBody();
+                AutoCalcResponse.class).getBody();
 
-        return(response);
+        return(response.getAutoCalcRS());
     }
 }
