@@ -23,7 +23,7 @@
         <th>ID</th>
         <th>Name</th>
     </tr>
-    <jsp:useBean id="products" scope="request" type="com.example.KaskoWebClient.Model.KaskoAPI.ResponseProduct.Products"/>
+    <jsp:useBean id="products" scope="request" type="com.example.KaskoWebClient.model.api.responses.ProductResponse.Products"/>
     <c:forEach var="contact" items="${products.products}">
         <tr>
             <th>${contact.id}</th><th>${contact.name}</th>

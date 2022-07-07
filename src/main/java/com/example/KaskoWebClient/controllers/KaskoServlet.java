@@ -1,7 +1,7 @@
-package com.example.KaskoWebClient.Controller;
+package com.example.KaskoWebClient.controllers;
 
-import com.example.KaskoWebClient.model.KaskoAPI.RequireCalc.*;
-import com.example.KaskoWebClient.model.KaskoAPI.ResponseCalc.AutoCalcResponse;
+import com.example.KaskoWebClient.model.api.requests.CalcRequest.*;
+import com.example.KaskoWebClient.model.api.responses.CalcResponse.AutoCalcResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import org.springframework.http.HttpEntity;
@@ -11,7 +11,6 @@ import org.springframework.http.MediaType;
 import org.springframework.web.client.RestTemplate;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,15 +19,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@WebServlet(
-        name = "KaskoServlet",
-        description = "Servlet for JSP",
-        urlPatterns = {"/calc"}
-)
+// TODO: Убрать, сервлет создан для примера.
 public class KaskoServlet extends HttpServlet {
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
         ObjectMapper objectMapper = new ObjectMapper();
         AutoCalcRq autoCalcRq = new AutoCalcRq();
@@ -56,7 +51,7 @@ public class KaskoServlet extends HttpServlet {
         autoDescription.setRegionId(req.getParameter("regionId"));
         creditBank.setBankId(req.getParameter("bankId"));
         creditBank.setBankName(req.getParameter("BankName"));
-        insuranceDescription.setRegion(req.getParameter("regionIns"));
+        insuranceDescription.setRegion(req.getParameter(""));
         autoDescription.setModelDescription(modelDescription);
         autoDescription.setPrice(price);
         autoDescription.setCreditBank(creditBank);
@@ -118,11 +113,11 @@ public class KaskoServlet extends HttpServlet {
         driversDescription.setMultidriveType(3);
 
         Driver driver = new Driver();
-        driver.setAge(req.getParameter("age"));
-        driver.setExperience(req.getParameter("driveExp"));
-        driver.setGender(req.getParameter("gender"));
-        driver.setResident(Boolean.parseBoolean(req.getParameter("resident")));
-        driver.setRegionRegistrationId(req.getParameter("age"));
+        driver.setAge("30");
+        driver.setExperience("12");
+        driver.setGender("MALE");
+        driver.setResident(true);
+        driver.setRegionRegistrationId("78");
         driversDescription.setDriver(driver);
 
         autoCalcRq.setInsurance(insuranceDescription);
@@ -138,17 +133,6 @@ public class KaskoServlet extends HttpServlet {
                 HttpMethod.POST,
                 request,
                 AutoCalcResponse.class).getBody();
-
-    }
-
-    @Override
-    protected void doGet (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-        String string = req.getParameter("response");
-
-        req.setAttribute("text", string);
-        req.getRequestDispatcher("/calc.jsp").forward(req, resp);
-
-
     }
 
 }

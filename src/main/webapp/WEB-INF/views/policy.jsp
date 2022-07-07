@@ -1,20 +1,23 @@
-<%@ page import="com.example.KaskoWebClient.Model.KaskoAPI.RequireCalc.AutoCalcRq" %>
-<%@ page import="com.example.KaskoWebClient.Model.KaskoAPI.RequireCalc.AutoDescription" %>
-<%@ page import="com.example.KaskoWebClient.Model.KaskoAPI.RequireCalc.ModelDescription" %>
 <%@ page contentType="text/html; charset=utf-8"
          pageEncoding="utf-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>Sample Kasko API</title>
+        <title>Sample Kasko API - 1</title>
     </head>
     <body>
-        <form name="StartingForm" action="calc.jsp" method="post">
+        <%--@elvariable id="autoCalcRq" type="AutoCalcRq"--%>
+        <form:form action="/calc" method="post" modelAttribute="autoCalcRq">
             <table>
                 <tbody>
+                    <tr>
+                        <td>RegionId:</td>
+                        <td><input type="text" name="auto.regionId"/></td>
+                    </tr>
                     <tr>
                         <td>Новое ТС?:</td>
                         <td><input type="checkbox" name="NewTs"/></td>
@@ -25,11 +28,11 @@
                     </tr>
                     <tr>
                         <td>Марка автомобиля:</td>
-                        <td><input type="text" name="MarkName"/></td>
+                        <td> <form:input type="text" path=""/></td>
                     </tr>
                     <tr>
                         <td>Модель автомобиля:</td>
-                        <td><input type="text" name="ModelName"/></td>
+                        <td><input type="text" name=""/></td>
                     </tr>
                     <tr>
                         <td>Количество лошадиных сил:</td>
@@ -75,6 +78,6 @@
             </table>
             <input type="reset" name="Clear" value="Очистить">
             <input type="submit" value="Отправить">
-        </form>
+        </form:form>
     </body>
 </html>
