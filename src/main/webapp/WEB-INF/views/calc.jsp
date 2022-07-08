@@ -13,77 +13,67 @@
         <th>
             <div style="padding-left: 35px">
                 <span style="color: blue">
-                    Id сообщения-предупреждения:
-                    <span style="color: coral">
-                        ${elem.messageId}
-                    </span>
-                </span>
-            </div>
-        </th>
-        <th>
-            <div style="padding-left: 35px">
-                <span style="color: blue">
                     Cообщение-предупреждение:
                     <span style="color: coral">
-                            ${elem.message}
+                            ${elem.message} (${elem.messageId})
                     </span>
                 </span>
             </div>
         </th>
     </tr>
 </c:forEach>
-<div style="padding-left: 20px">Тип услуги: ${autoCalcResponse.autoCalcRS.calcType}</div>
-<div style="padding-left: 20px">Дата создания запроса: ${autoCalcResponse.autoCalcRS.calcDate}</div>
-<div style="padding-left: 20px">Флаг "Транзит": ${autoCalcResponse.autoCalcRS.transit}</div>
-<div style="padding-left: 20px">Флаг "Тахограф": ${autoCalcResponse.autoCalcRS.tachograph}</div>
-<div style="padding-left: 20px">Территория использования коммерческих ТС:${autoCalcResponse.autoCalcRS.territoryId}</div>
-<div style="padding-left: 20px">ID модели: ${autoCalcResponse.autoCalcRS.modelId}</div>
-<div style="padding-left: 20px">ID марки: ${autoCalcResponse.autoCalcRS.markId}</div>
-<div style="padding-left: 20px">Наименование марки: ${autoCalcResponse.autoCalcRS.markName}</div>
-<div style="padding-left: 20px">Наименование модели: ${autoCalcResponse.autoCalcRS.modelName}</div>
-<div style="padding-left: 20px">ID префикса коммерческих ТС: ${autoCalcResponse.autoCalcRS.prefixComTsId}</div>
-<div style="padding-left: 20px">Наименование префикса коммерческих ТС: ${autoCalcResponse.autoCalcRS.prefixComTsName}</div>
-<div style="padding-left: 20px">ID типа коммерческих ТС: ${autoCalcResponse.autoCalcRS.typeComTsId}</div>
-<div style="padding-left: 20px">Наименование типа коммерческих ТС: ${autoCalcResponse.autoCalcRS.typeComTsName}</div>
-<div style="padding-left: 20px">Категория транспортного средства: ${autoCalcResponse.autoCalcRS.category}</div>
-<div style="padding-left: 20px">Ввод марки и модели не из справочника: ${autoCalcResponse.autoCalcRS.anotherMm}</div>
-<div style="padding-left: 20px">Наименование марки ТС (ручной ввод): ${autoCalcResponse.autoCalcRS.anotherMarkName}</div>
-<div style="padding-left: 20px">Наименование модели (ручной ввод): ${autoCalcResponse.autoCalcRS.anotherModelName}</div>
-<div style="padding-left: 20px">Изготовитель: ${autoCalcResponse.autoCalcRS.manufacturer}</div>
-<div style="padding-left: 35px">Валюта рассчитанной премии: ${autoCalcResponse.autoCalcRS.totalSumm.currency}</div>
-<div style="padding-left: 35px">Рассчитанная премия: ${autoCalcResponse.autoCalcRS.totalSumm.sum}</div>
+<div style="padding-left: 20px">Тип услуги: <strong>${autoCalcResponse.autoCalcRS.calcType}</strong></div>
+<div style="padding-left: 20px">Дата создания запроса: <strong>${autoCalcResponse.autoCalcRS.calcDate}></strong></div>
+<div style="padding-left: 20px">Флаг "Транзит": <strong>${autoCalcResponse.autoCalcRS.transit}</strong></div>
+<div style="padding-left: 20px">Флаг "Тахограф": <strong>${autoCalcResponse.autoCalcRS.tachograph}</strong></div>
+<div style="padding-left: 20px">Территория использования коммерческих ТС: <strong>${autoCalcResponse.autoCalcRS.territoryId}</strong></div>
+<div style="padding-left: 20px">ID модели: <strong>${autoCalcResponse.autoCalcRS.modelId}</strong></div>
+<div style="padding-left: 20px">ID марки: <strong>${autoCalcResponse.autoCalcRS.markId}</strong></div>
+<div style="padding-left: 20px">Наименование марки: <strong>${autoCalcResponse.autoCalcRS.markName}</strong></div>
+<div style="padding-left: 20px">Наименование модели: <strong>${autoCalcResponse.autoCalcRS.modelName}</strong></div>
+<div style="padding-left: 20px">ID префикса коммерческих ТС: <strong>${autoCalcResponse.autoCalcRS.prefixComTsId}</strong></div>
+<div style="padding-left: 20px">Наименование префикса коммерческих ТС: <strong>${autoCalcResponse.autoCalcRS.prefixComTsName}</strong></div>
+<div style="padding-left: 20px">ID типа коммерческих ТС: <strong>${autoCalcResponse.autoCalcRS.typeComTsId}</strong></div>
+<div style="padding-left: 20px">Наименование типа коммерческих ТС: <strong>${autoCalcResponse.autoCalcRS.typeComTsName}</strong></div>
+<div style="padding-left: 20px">Категория транспортного средства: <strong>${autoCalcResponse.autoCalcRS.category}</strong></div>
+<div style="padding-left: 20px">Ввод марки и модели не из справочника: <strong>${autoCalcResponse.autoCalcRS.anotherMm}</strong></div>
+<div style="padding-left: 20px">Наименование марки ТС (ручной ввод): <strong>${autoCalcResponse.autoCalcRS.anotherMarkName}</strong></div>
+<div style="padding-left: 20px">Наименование модели (ручной ввод): <strong>${autoCalcResponse.autoCalcRS.anotherModelName}</strong></div>
+<div style="padding-left: 20px">Изготовитель: <strong>${autoCalcResponse.autoCalcRS.manufacturer}</strong></div>
+<div style="padding-left: 35px">Валюта рассчитанной премии: <strong>${autoCalcResponse.autoCalcRS.totalSumm.currency}</strong></div>
+<div style="padding-left: 35px">Рассчитанная премия: <strong>${autoCalcResponse.autoCalcRS.totalSumm.sum}</strong></div>
 <c:forEach var="elem" items="${autoCalcResponse.autoCalcRS.risks}">
     <tr>
-        <th><div style="padding-left: 35px">ID риска: ${elem.riskId}</div></th>
-        <th><div style="padding-left: 35px">Наименование риска: ${elem.riskName}</div></th>
-        <th><div style="padding-left: 35px">Банк обязателен: ${elem.bankRequired}</div></th>
-        <th><div style="padding-left: 35px">Риск обязателен: ${elem.codeRequired}</div></th>
-        <th><div style="padding-left: 50px">Валюта страховой суммы по риску: ${elem.insuredSumm.currency}</div></th>
-        <th><div style="padding-left: 50px">Страховая сумма по риску: ${elem.insuredSumm.sum}</div></th>
-        <th><div style="padding-left: 50px">Валюта рассчитанной премии по риску: ${elem.insuredPremium.currency}</div></th>
-        <th><div style="padding-left: 50px">Рассчитанная премия по риску: ${elem.insuredPremium.sum}</div></th>
+        <th><div style="padding-left: 35px">ID риска: <strong>${elem.riskId}</strong></div></th>
+        <th><div style="padding-left: 35px">Наименование риска: <strong>${elem.riskName}</strong></div></th>
+        <th><div style="padding-left: 35px">Банк обязателен: <strong>${elem.bankRequired}</strong></div></th>
+        <th><div style="padding-left: 35px">Риск обязателен: <strong>${elem.codeRequired}</strong></div></th>
+        <th><div style="padding-left: 50px">Валюта страховой суммы по риску: <strong>${elem.insuredSumm.currency}</strong></div></th>
+        <th><div style="padding-left: 50px">Страховая сумма по риску: <strong>${elem.insuredSumm.sum}</strong></div></th>
+        <th><div style="padding-left: 50px">Валюта рассчитанной премии по риску: <strong>${elem.insuredPremium.currency}</strong></div></th>
+        <th><div style="padding-left: 50px">Рассчитанная премия по риску: <strong>${elem.insuredPremium.sum}</strong></div></th>
     </tr>
 </c:forEach>
 <c:forEach var="elem" items="${autoCalcResponse.autoCalcRS.options}">
     <tr>
-        <th><div style="padding-left: 35px">ID опции: ${elem.optionId}</div></th>
-        <th><div style="padding-left: 35px">Наименование опции: ${elem.optionName}</div></th>
-        <th><div style="padding-left: 35px">ID риска: ${elem.riskId}</div></th>
-        <th><div style="padding-left: 35px">ID группы опций: ${elem.optionGroupId}</div></th>
-        <th><div style="padding-left: 35px">Обязательность группы опций: ${elem.groupOptionRequired}</div></th>
-        <th><div style="padding-left: 35px">Исключительность группы опций: ${elem.groupOptionEx}</div></th>
-        <th><div style="padding-left: 35px">Номер опции: ${elem.optionNumber}</div></th>
-        <th><div style="padding-left: 35px">Вариант ограничение пробега для продукта КиберКАСКО: ${elem.valueOption}</div></th>
+        <th><div style="padding-left: 35px">ID опции: <strong>${elem.optionId}</strong>></div></th>
+        <th><div style="padding-left: 35px">Наименование опции: <strong>${elem.optionName}</strong></div></th>
+        <th><div style="padding-left: 35px">ID риска: <strong>${elem.riskId}</strong></div></th>
+        <th><div style="padding-left: 35px">ID группы опций: <strong>${elem.optionGroupId}</strong></div></th>
+        <th><div style="padding-left: 35px">Обязательность группы опций: <strong>${elem.groupOptionRequired}</strong></div></th>
+        <th><div style="padding-left: 35px">Исключительность группы опций: <strong>${elem.groupOptionEx}</strong></div></th>
+        <th><div style="padding-left: 35px">Номер опции: <strong>${elem.optionNumber}</strong></div></th>
+        <th><div style="padding-left: 35px">Вариант ограничение пробега для продукта КиберКАСКО: <strong>${elem.valueOption}</strong></div></th>
     </tr>
 </c:forEach>
-<div style="padding-left: 35px">Размер КВ агента, использованный для расчета: ${autoCalcResponse.autoCalcRS.insurance.kvSize}</div>
-<div style="padding-left: 35px">Максимальный размер КВ по договору агента: ${autoCalcResponse.autoCalcRS.insurance.kvSizeMax}</div>
-<div style="padding-left: 35px">Период страхования: ${autoCalcResponse.autoCalcRS.insurance.term_insurance}</div>
-<div style="padding-left: 20px">Индекс: ${autoCalcResponse.autoCalcRS.factor}</div>
-<div style="padding-left: 20px">Измененные объекты: ${autoCalcResponse.autoCalcRS.changedConditions}</div>
-<div style="padding-left: 20px">Id экспресс-расчета: ${autoCalcResponse.autoCalcRS.expressQuotationId}</div>
-<div style="padding-left: 20px">URL экспресс-расчета: ${autoCalcResponse.autoCalcRS.expressQuotationUrl}</div>
-<div style="padding-left: 20px">ID калькуляции: ${autoCalcResponse.autoCalcRS.calculationId}</div>
+<div style="padding-left: 35px">Размер КВ агента, использованный для расчета: <strong>${autoCalcResponse.autoCalcRS.insurance.kvSize}</strong></div>
+<div style="padding-left: 35px">Максимальный размер КВ по договору агента: <strong>${autoCalcResponse.autoCalcRS.insurance.kvSizeMax}</strong></div>
+<div style="padding-left: 35px">Период страхования: <strong>${autoCalcResponse.autoCalcRS.insurance.term_insurance}</strong></div>
+<div style="padding-left: 20px">Индекс: <strong>${autoCalcResponse.autoCalcRS.factor}<?</div>
+    <div style="padding-left: 20px">Измененные объекты: <strong>${autoCalcResponse.autoCalcRS.changedConditions}</strong></div>
+    <div style="padding-left: 20px">Id экспресс-расчета: <strong>${autoCalcResponse.autoCalcRS.expressQuotationId}</strong></div>
+    <div style="padding-left: 20px">URL экспресс-расчета: <strong>${autoCalcResponse.autoCalcRS.expressQuotationUrl}</strong></div>
+    <div style="padding-left: 20px">ID калькуляции: <strong>${autoCalcResponse.autoCalcRS.calculationId}</strong></div>
 <br/>
 ${autoCalcRs}
 </body>

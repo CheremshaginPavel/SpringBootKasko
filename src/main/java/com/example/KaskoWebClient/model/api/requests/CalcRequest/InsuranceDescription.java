@@ -11,7 +11,7 @@ public class InsuranceDescription {
     private String productId;
 
     @JsonProperty("contract_id")
-    private Integer contractId;
+    private String contractId;
 
     @JsonProperty("term_insurance")
     private Integer termInsurance;
@@ -62,11 +62,11 @@ public class InsuranceDescription {
         this.productId = productId;
     }
 
-    public Integer getContractId() {
+    public String getContractId() {
         return contractId;
     }
 
-    public void setContractId(Integer contractId) {
+    public void setContractId(String contractId) {
         this.contractId = contractId;
     }
 

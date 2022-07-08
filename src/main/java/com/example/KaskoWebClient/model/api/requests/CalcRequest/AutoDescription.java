@@ -26,16 +26,16 @@ public class AutoDescription {
     private Integer usagePurpose;
 
     @JsonProperty("warranty")
-    private Boolean warranty;
+    private String warranty;
 
     @JsonProperty("previous_company")
     private String previousCompany;
 
     @JsonProperty("accidents_last_year")
-    private Boolean accidentsLastYear;
+    private String accidentsLastYear;
 
     @JsonProperty("special_program_id")
-    private String specialProgramId;
+    private Integer specialProgramId;
 
     public AutoDescription() {
     }
@@ -96,11 +96,11 @@ public class AutoDescription {
         this.usagePurpose = usagePurpose;
     }
 
-    public Boolean getWarranty() {
+    public String getWarranty() {
         return warranty;
     }
 
-    public void setWarranty(Boolean warranty) {
+    public void setWarranty(String warranty) {
         this.warranty = warranty;
     }
 
@@ -112,19 +112,19 @@ public class AutoDescription {
         this.previousCompany = previousCompany;
     }
 
-    public Boolean getAccidentsLastYear() {
+    public String getAccidentsLastYear() {
         return accidentsLastYear;
     }
 
-    public void setAccidentsLastYear(Boolean accidentsLastYear) {
+    public void setAccidentsLastYear(String accidentsLastYear) {
         this.accidentsLastYear = accidentsLastYear;
     }
 
-    public String getSpecialProgramId() {
+    public Integer getSpecialProgramId() {
         return specialProgramId;
     }
 
-    public void setSpecialProgramId(String specialProgramId) {
+    public void setSpecialProgramId(Integer specialProgramId) {
         this.specialProgramId = specialProgramId;
     }
 }

@@ -64,14 +64,14 @@ public class  MainController {
         creditBank.setBankId("137629");
         autoDescription.setModelDescription(modelDescription);
         autoDescription.setCreditBank(creditBank);
-        autoDescription.setWarranty(false);
-        autoDescription.setAccidentsLastYear(false);
-        autoDescription.setSpecialProgramId("0");
+        autoDescription.setWarranty("0");
+        autoDescription.setAccidentsLastYear("0");
+        autoDescription.setSpecialProgramId(0);
         autoCalcRq.setAuto(autoDescription);
 
         insuranceDescription.setKvSize("0");
         insuranceDescription.setProductId("17447");
-        insuranceDescription.setContractId(1);
+        insuranceDescription.setContractId("1");
         insuranceDescription.setTermInsurance(36);
         insuranceDescription.setSpecialProgram(false);
         insuranceDescription.setFranchiseId(51);
@@ -124,10 +124,10 @@ public class  MainController {
             return new ModelAndView("errorNull");
         }
 
-        if (!autoCalcResponse.getAutoCalcRS().getErrors().isEmpty()) {
-            model.addAttribute("autoCalcResponse", autoCalcResponse);
-            return new ModelAndView("error");
-        }
+//        if (!autoCalcResponse.getAutoCalcRS().getErrors().isEmpty()) {
+//            model.addAttribute("autoCalcResponse", autoCalcResponse);
+//            return new ModelAndView("error");
+//        }
 
         String autoCalcRs = objectMapper.writeValueAsString(autoCalcResponse);
 

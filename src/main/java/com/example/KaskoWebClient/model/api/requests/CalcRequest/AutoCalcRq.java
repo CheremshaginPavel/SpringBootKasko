@@ -40,6 +40,9 @@ public class AutoCalcRq {
     @JsonProperty("drivers")
     private DriversDescription drivers;
 
+    @JsonProperty("insurer")
+    private Insurer insurer;
+
     public AutoCalcRq() {
     }
 
@@ -121,5 +124,13 @@ public class AutoCalcRq {
 
     public void setDrivers(DriversDescription drivers) {
         this.drivers = drivers;
+    }
+
+    public Insurer getInsurer() {
+        return insurer;
+    }
+
+    public void setInsurer(Insurer insurer) {
+        this.insurer = insurer;
     }
 }

@@ -12,19 +12,9 @@
         <th>
             <div style="padding-left: 35px">
                     <span style="color: blue">
-                        Id сообщения-ошибки:
-                        <span style="color: coral">
-                            ${elem.messageId}
-                        </span>
-                    </span>
-            </div>
-        </th>
-        <th>
-            <div style="padding-left: 35px">
-                    <span style="color: blue">
                         Cообщение-ошибка:
                         <span style="color: coral">
-                            ${elem.message}
+                            ${elem.message} (${elem.messageId})
                         </span>
                     </span>
             </div>

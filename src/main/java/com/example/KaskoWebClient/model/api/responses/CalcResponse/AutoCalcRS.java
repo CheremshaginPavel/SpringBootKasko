@@ -19,10 +19,10 @@ public class AutoCalcRS {
     private Integer territoryId;
 
     @JsonProperty("model_id")
-    private Integer modelId;
+    private String modelId;
 
     @JsonProperty("mark_id")
-    private Integer markId;
+    private String markId;
 
     @JsonProperty("mark_name")
     private String markName;
@@ -124,19 +124,19 @@ public class AutoCalcRS {
         this.territoryId = territoryId;
     }
 
-    public Integer getModelId() {
+    public String getModelId() {
         return modelId;
     }
 
-    public void setModelId(Integer modelId) {
+    public void setModelId(String modelId) {
         this.modelId = modelId;
     }
 
-    public Integer getMarkId() {
+    public String getMarkId() {
         return markId;
     }
 
-    public void setMarkId(Integer markId) {
+    public void setMarkId(String markId) {
         this.markId = markId;
     }
 

@@ -1,5 +1,6 @@
 package com.example.KaskoWebClient.model.api.requests.CalcRequest;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Date;
 
@@ -8,6 +9,7 @@ public class Insurer {
     @JsonProperty("gender")
     private String gender;
 
+    @JsonFormat(pattern="dd.MM.yyyy")
     @JsonProperty("date_of_birth")
     private Date dateOfBirth;
 

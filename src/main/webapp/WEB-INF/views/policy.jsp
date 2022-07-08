@@ -51,12 +51,52 @@
                         <td><input type="text" name="auto.price.sum"/></td>
                     </tr>
                     <tr>
-                        <td>Номер региона:</td>
+                        <td>Номер региона эксплуатации автомобиля:</td>
                         <td><input type="text" name="regionId"/></td>
                     </tr>
                     <tr>
                         <td>Название банка:</td>
                         <td><input type="text" name="creditBank.bankName"/></td>
+                    </tr>
+                    <tr>
+                        <td>Ваш возраст:</td>
+                        <td><input type="text" name="drivers.driver.age"/></td>
+                    </tr>
+                    <tr>
+                        <td>Опыт вождения:</td>
+                        <td><input type="text" name="drivers.driver.experience"/></td>
+                    </tr>
+                    <tr>
+                        <td>Пол водителя:</td>
+                        <td><input type="text" name="drivers.driver.gender"/></td>
+                    </tr>
+                    <tr>
+                        <td>Регион регистрации автомобиля:</td>
+                        <td><input type="text" name="drivers.driver.regionRegistrationId"/></td>
+                    </tr>
+                    <tr>
+                        <td>Вы резидент РФ:</td>
+                        <td><input type="checkbox" name="drivers.driver.resident"/></td>
+                    </tr>
+                    <tr>
+                        <td>Пол страхователя:</td>
+                        <td><input type="text" name="insurer.gender"/></td>
+                    </tr>
+                    <tr>
+                        <td>Дата рождения страхователя:</td>
+                        <td><input type="text" name="insurer.dateOfBirth"/></td>
+                    </tr>
+                    <tr>
+                        <td>Имя страхователя:</td>
+                        <td><input type="text" name="insurer.firstName"/></td>
+                    </tr>
+                    <tr>
+                        <td>Фамилия страхователя:</td>
+                        <td><input type="text" name="insurer.lastName"/></td>
+                    </tr>
+                    <tr>
+                        <td>Отчество страхователя:</td>
+                        <td><input type="text" name="insurer.middleName"/></td>
                     </tr>
                 </tbody>
             </table>
