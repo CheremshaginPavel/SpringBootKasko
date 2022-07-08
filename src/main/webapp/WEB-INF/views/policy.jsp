@@ -15,52 +15,40 @@
             <table>
                 <tbody>
                     <tr>
-                        <td>RegionId:</td>
-                        <td><input type="text" name="auto.regionId"/></td>
-                    </tr>
-                    <tr>
                         <td>Новое ТС?:</td>
-                        <td><input type="checkbox" name="NewTs"/></td>
+                        <td><input type="checkbox" name="auto.modelDescription.tsNew"/></td>
                     </tr>
                     <tr>
                         <td>Срок службы:</td>
-                        <td><input type="text" name="MileAge"/></td>
+                        <td><input type="text" name="auto.modelDescription.mileAge"/></td>
                     </tr>
                     <tr>
                         <td>Марка автомобиля:</td>
-                        <td> <form:input type="text" path=""/></td>
+                        <td><input type="text" name="auto.modelDescription.markName"/></td>
                     </tr>
                     <tr>
                         <td>Модель автомобиля:</td>
-                        <td><input type="text" name=""/></td>
+                        <td><input type="text" name="auto.modelDescription.modelName"/></td>
                     </tr>
                     <tr>
                         <td>Количество лошадиных сил:</td>
-                        <td><input type="text" name="horsepower"/></td>
+                        <td><input type="text" name="auto.modelDescription.horsepower"/></td>
                     </tr>
                     <tr>
                         <td>Год выпуска:</td>
-                        <td><input type="text" name="year"/></td>
+                        <td><input type="text" name="auto.modelDescription.year"/></td>
                     </tr>
                     <tr>
                         <td>Положение руля:</td>
-                        <td><input type="text" name="side"/></td>
-                    </tr>
-                    <tr>
-                        <td>ID марки:</td>
-                        <td><input type="text" name="markId"/></td>
-                    </tr>
-                    <tr>
-                        <td>ID модели:</td>
-                        <td><input type="text" name="modelId"/></td>
+                        <td><input type="text" name="auto.modelDescription.sterringWheel.side"/></td>
                     </tr>
                     <tr>
                         <td>Установлен рекомендованный ПУУ:</td>
-                        <td><input type="checkbox" name="recommendedPuu"/></td>
+                        <td><input type="checkbox" name="auto.modelDescription.securityJa.recommendedPuu"/></td>
                     </tr>
                     <tr>
                         <td>Сумма в рублях:</td>
-                        <td><input type="text" name="sum"/></td>
+                        <td><input type="text" name="auto.price.sum"/></td>
                     </tr>
                     <tr>
                         <td>Номер региона:</td>
@@ -68,11 +56,7 @@
                     </tr>
                     <tr>
                         <td>Название банка:</td>
-                        <td><input type="text" name="bankName"/></td>
-                    </tr>
-                    <tr>
-                        <td>ID банка:</td>
-                        <td><input type="text" name="bankId"/></td>
+                        <td><input type="text" name="creditBank.bankName"/></td>
                     </tr>
                 </tbody>
             </table>
