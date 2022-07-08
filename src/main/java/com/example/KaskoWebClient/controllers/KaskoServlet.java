@@ -73,8 +73,6 @@ public class KaskoServlet extends HttpServlet {
 
         autoCalcRq.setAuto(autoDescription);
 
-
-
         insuranceDescription.setKvSize("0");
         insuranceDescription.setProductId("17447");
         insuranceDescription.setContractId(1);

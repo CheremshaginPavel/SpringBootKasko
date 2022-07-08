@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.text.ParseException;
 
 @RestController
-public class MainController {
+public class  MainController {
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     // TODO: Убрать, эндпоинт создан для примера работы с KASKO API

@@ -1,4 +1,4 @@
-<jsp:useBean id="autoCalcRs" scope="request" type="com.example.KaskoWebClient.model.api.responses.CalcR.AutoCalcRS"/>
+<jsp:useBean id="autoCalcRs" scope="request" type="com.example.KaskoWebClient.model.api.responses.CalcResponse.AutoCalcRS"/>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
