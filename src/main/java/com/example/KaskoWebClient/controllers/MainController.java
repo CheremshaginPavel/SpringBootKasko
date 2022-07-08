@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -112,11 +113,21 @@ public class  MainController {
         headers.setContentType(MediaType.APPLICATION_JSON);
         objectMapper.enable(SerializationFeature.WRAP_ROOT_VALUE);
         HttpEntity<String> request = new HttpEntity<>(objectMapper.writeValueAsString(autoCalcRq), headers);
+        AutoCalcResponse autoCalcResponse = null;
 
-        AutoCalcResponse autoCalcResponse = restTemplate.exchange("https://testout.sovcomins.ru/casco/cartest/calc",
-                HttpMethod.POST,
-                request,
-                AutoCalcResponse.class).getBody();
+        try {
+            autoCalcResponse = restTemplate.exchange("https://testout.sovcomins.ru/casco/cartest/calc",
+                    HttpMethod.POST,
+                    request,
+                    AutoCalcResponse.class).getBody();
+        } catch (RestClientException e) {
+            return new ModelAndView("errorNull");
+        }
+
+        if (!autoCalcResponse.getAutoCalcRS().getErrors().isEmpty()) {
+            model.addAttribute("autoCalcResponse", autoCalcResponse);
+            return new ModelAndView("error");
+        }
 
         String autoCalcRs = objectMapper.writeValueAsString(autoCalcResponse);
 

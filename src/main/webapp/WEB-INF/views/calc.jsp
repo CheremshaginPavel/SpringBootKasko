@@ -1,6 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:useBean id="autoCalcResponse" scope="request" type="com.example.KaskoWebClient.model.api.responses.CalcResponse.AutoCalcResponse"/>
-<%--<jsp:useBean id="autoCalcRS" scope="request" type="com.example.KaskoWebClient.model.api.responses.CalcResponse.AutoCalcRS"/>--%>
 <jsp:useBean id="autoCalcRs" scope="request" type="java.lang.String"/>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -9,6 +8,30 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
+<c:forEach var="elem" items="${autoCalcResponse.autoCalcRS.warnings}">
+    <tr>
+        <th>
+            <div style="padding-left: 35px">
+                <span style="color: blue">
+                    Id сообщения-предупреждения:
+                    <span style="color: coral">
+                        ${elem.messageId}
+                    </span>
+                </span>
+            </div>
+        </th>
+        <th>
+            <div style="padding-left: 35px">
+                <span style="color: blue">
+                    Cообщение-предупреждение:
+                    <span style="color: coral">
+                            ${elem.message}
+                    </span>
+                </span>
+            </div>
+        </th>
+    </tr>
+</c:forEach>
 <div style="padding-left: 20px">Тип услуги: ${autoCalcResponse.autoCalcRS.calcType}</div>
 <div style="padding-left: 20px">Дата создания запроса: ${autoCalcResponse.autoCalcRS.calcDate}</div>
 <div style="padding-left: 20px">Флаг "Транзит": ${autoCalcResponse.autoCalcRS.transit}</div>
@@ -57,18 +80,10 @@
 <div style="padding-left: 35px">Максимальный размер КВ по договору агента: ${autoCalcResponse.autoCalcRS.insurance.kvSizeMax}</div>
 <div style="padding-left: 35px">Период страхования: ${autoCalcResponse.autoCalcRS.insurance.term_insurance}</div>
 <div style="padding-left: 20px">Индекс: ${autoCalcResponse.autoCalcRS.factor}</div>
-<c:forEach var="elem" items="${autoCalcResponse.autoCalcRS.warnings}">
-    <tr>
-        <th><div style="padding-left: 35px">Id сообщения-предупреждения: ${elem.messageId}</div></th>
-        <th><div style="padding-left: 35px">Сообщение-предупреждение: ${elem.message}</div></th>
-    </tr>
-</c:forEach>
 <div style="padding-left: 20px">Измененные объекты: ${autoCalcResponse.autoCalcRS.changedConditions}</div>
 <div style="padding-left: 20px">Id экспресс-расчета: ${autoCalcResponse.autoCalcRS.expressQuotationId}</div>
 <div style="padding-left: 20px">URL экспресс-расчета: ${autoCalcResponse.autoCalcRS.expressQuotationUrl}</div>
 <div style="padding-left: 20px">ID калькуляции: ${autoCalcResponse.autoCalcRS.calculationId}</div>
-<div style="padding-left: 35px">Id сообщения-ошибки: ${autoCalcResponse.autoCalcRS.errors.messageId}</div>
-<div style="padding-left: 35px">Сообщение-ошибка: ${autoCalcResponse.autoCalcRS.errors.message}</div>
 <br/>
 ${autoCalcRs}
 </body>

@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Errors {
 
     @JsonProperty("message_id")
-    private Integer messageId;
+    private String messageId;
 
     @JsonProperty("message")
     private String message;
@@ -13,11 +13,11 @@ public class Errors {
     public Errors() {
     }
 
-    public Integer getMessageId() {
+    public String getMessageId() {
         return messageId;
     }
 
-    public void setMessageId(Integer messageId) {
+    public void setMessageId(String messageId) {
         this.messageId = messageId;
     }
 

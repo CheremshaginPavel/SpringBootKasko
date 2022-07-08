@@ -94,8 +94,8 @@ public class AutoCalcRS {
     @JsonProperty("calculation_id")
     private Long calculationId;
 
-    @JsonProperty("Errors")
-    private Errors errors;
+    @JsonProperty("errors")
+    private List<Errors> errors;
 
     public AutoCalcRS() {
     }
@@ -308,14 +308,6 @@ public class AutoCalcRS {
         this.calculationId = calculationId;
     }
 
-    public Errors getErrors() {
-        return errors;
-    }
-
-    public void setErrors(Errors errors) {
-        this.errors = errors;
-    }
-
     public List<Risks> getRisks() {
         return risks;
     }
@@ -331,4 +323,13 @@ public class AutoCalcRS {
     public void setChangedConditions(ChangedConditions changedConditions) {
         this.changedConditions = changedConditions;
     }
+
+    public List<Errors> getErrors() {
+        return errors;
+    }
+
+    public void setErrors(List<Errors> errors) {
+        this.errors = errors;
+    }
+
 }
