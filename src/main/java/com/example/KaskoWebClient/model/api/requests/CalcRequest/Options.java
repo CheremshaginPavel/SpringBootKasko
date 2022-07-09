@@ -1,7 +1,10 @@
 package com.example.KaskoWebClient.model.api.requests.CalcRequest;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Options {
 
+    @JsonProperty("option")
     private Option option;
 
     public Options() {

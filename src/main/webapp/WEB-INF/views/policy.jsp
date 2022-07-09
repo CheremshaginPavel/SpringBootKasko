@@ -82,10 +82,10 @@
                         <td>Пол страхователя:</td>
                         <td><input type="text" name="insurer.gender"/></td>
                     </tr>
-                    <tr>
-                        <td>Дата рождения страхователя:</td>
-                        <td><input type="text" name="insurer.dateOfBirth"/></td>
-                    </tr>
+<%--                    <tr>--%>
+<%--                        <td>Дата рождения страхователя:</td>--%>
+<%--                        <td><input type="date" name="insurer.dateOfBirth"/></td>--%>
+<%--                    </tr>--%>
                     <tr>
                         <td>Имя страхователя:</td>
                         <td><input type="text" name="insurer.firstName"/></td>

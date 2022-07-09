@@ -23,7 +23,7 @@
     </tr>
 </c:forEach>
 <div style="padding-left: 20px">Тип услуги: <strong>${autoCalcResponse.autoCalcRS.calcType}</strong></div>
-<div style="padding-left: 20px">Дата создания запроса: <strong>${autoCalcResponse.autoCalcRS.calcDate}></strong></div>
+<%--<div style="padding-left: 20px">Дата создания запроса: <strong>${autoCalcResponse.autoCalcRS.calcDate}></strong></div>--%>
 <div style="padding-left: 20px">Флаг "Транзит": <strong>${autoCalcResponse.autoCalcRS.transit}</strong></div>
 <div style="padding-left: 20px">Флаг "Тахограф": <strong>${autoCalcResponse.autoCalcRS.tachograph}</strong></div>
 <div style="padding-left: 20px">Территория использования коммерческих ТС: <strong>${autoCalcResponse.autoCalcRS.territoryId}</strong></div>

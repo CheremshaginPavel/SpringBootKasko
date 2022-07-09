@@ -3,6 +3,8 @@ package com.example.KaskoWebClient.model.api.responses.CalcResponse;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 import java.util.List;
 
@@ -61,7 +63,7 @@ public class AutoCalcRS {
     private String calcType;
 
     @JsonProperty("calc_date")
-    @JsonFormat(pattern="dd.MM.yyyy HH:mm:ss")
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date calcDate;
 
     @JsonProperty("total_summ")
@@ -77,7 +79,7 @@ public class AutoCalcRS {
     private Insurance insurance;
 
     @JsonProperty("factor")
-    private Double factor;
+    private String factor;
 
     @JsonProperty("warnings")
     private List<Warnings> warnings;
@@ -86,13 +88,13 @@ public class AutoCalcRS {
     private ChangedConditions changedConditions;
 
     @JsonProperty("express_quotation_id")
-    private Long expressQuotationId;
+    private String expressQuotationId;
 
     @JsonProperty("express_quotation_url")
     private String expressQuotationUrl;
 
     @JsonProperty("calculation_id")
-    private Long calculationId;
+    private String calculationId;
 
     @JsonProperty("errors")
     private List<Errors> errors;
@@ -268,11 +270,11 @@ public class AutoCalcRS {
         this.insurance = insurance;
     }
 
-    public Double getFactor() {
+    public String getFactor() {
         return factor;
     }
 
-    public void setFactor(Double factor) {
+    public void setFactor(String factor) {
         this.factor = factor;
     }
 
@@ -284,11 +286,11 @@ public class AutoCalcRS {
         this.warnings = warnings;
     }
 
-    public Long getExpressQuotationId() {
+    public String getExpressQuotationId() {
         return expressQuotationId;
     }
 
-    public void setExpressQuotationId(Long expressQuotationId) {
+    public void setExpressQuotationId(String expressQuotationId) {
         this.expressQuotationId = expressQuotationId;
     }
 
@@ -300,11 +302,11 @@ public class AutoCalcRS {
         this.expressQuotationUrl = expressQuotationUrl;
     }
 
-    public Long getCalculationId() {
+    public String getCalculationId() {
         return calculationId;
     }
 
-    public void setCalculationId(Long calculationId) {
+    public void setCalculationId(String calculationId) {
         this.calculationId = calculationId;
     }
 

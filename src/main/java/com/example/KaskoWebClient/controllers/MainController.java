@@ -21,6 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -57,7 +58,7 @@ public class  MainController {
         autoCalcRq.setPartnerPin("cartest");
         autoCalcRq.setCalcType("KASKO");
         autoCalcRq.setCalcDate(new Date());
-        autoCalcRq.setExpressQuotationId(5768484);
+        autoCalcRq.setExpressQuotationId("5768484");
 
         modelDescription.setMarkId("52");
         modelDescription.setModelId("4908");
@@ -78,6 +79,12 @@ public class  MainController {
         insuranceDescription.setDeprecation(false);
         insuranceDescription.setReimbursement(2);
         insuranceDescription.setPaymentPlanId(1);
+//        String dateBirth = (String) model.getAttribute("insurer.dateOfBirth");
+//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//        Date date = sdf.parse(dateBirth);
+        Insurer insurer = new Insurer();
+        insurer.setDateOfBirth(new Date());
+        autoCalcRq.setInsurer(insurer);
 
         Risks risks = new Risks();
         Risk riskChild = new Risk();

@@ -3,6 +3,7 @@ package com.example.KaskoWebClient.model.api.requests.CalcRequest;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -16,7 +17,7 @@ public class AutoCalcRq {
     private String calcType;
 
     @JsonProperty("calc_date")
-    @JsonFormat(pattern="dd.MM.yyyy HH:mm:ss")
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date calcDate;
 
     @JsonProperty("model_selection")
@@ -26,7 +27,7 @@ public class AutoCalcRq {
     private String factor;
 
     @JsonProperty("express_quotation_id")
-    private Integer expressQuotationId;
+    private String expressQuotationId;
 
     @JsonProperty("region_id")
     private String regionId;
@@ -86,11 +87,11 @@ public class AutoCalcRq {
         this.factor = factor;
     }
 
-    public Integer getExpressQuotationId() {
+    public String getExpressQuotationId() {
         return expressQuotationId;
     }
 
-    public void setExpressQuotationId(Integer expressQuotationId) {
+    public void setExpressQuotationId(String expressQuotationId) {
         this.expressQuotationId = expressQuotationId;
     }
 
