@@ -9,9 +9,9 @@ public class Insurer {
     @JsonProperty("gender")
     private String gender;
 
-    @JsonFormat(pattern="dd.MM.yyyy")
+    @JsonFormat(pattern="yyyy-MM-dd")
     @JsonProperty("date_of_birth")
-    private Date dateOfBirth;
+    private String dateOfBirth;
 
     @JsonProperty("first_name")
     private String firstName;
@@ -33,11 +33,11 @@ public class Insurer {
         this.gender = gender;
     }
 
-    public Date getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 

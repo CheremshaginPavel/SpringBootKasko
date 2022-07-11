@@ -19,6 +19,9 @@ public class Driver {
     @JsonProperty("resident")
     private Boolean resident;
 
+    @JsonProperty("flag_link")
+    private Integer flagLink;
+
     public Driver() {
     }
 
@@ -60,5 +63,13 @@ public class Driver {
 
     public void setResident(Boolean resident) {
         this.resident = resident;
+    }
+
+    public Integer getFlagLink() {
+        return flagLink;
+    }
+
+    public void setFlagLink(Integer flagLink) {
+        this.flagLink = flagLink;
     }
 }

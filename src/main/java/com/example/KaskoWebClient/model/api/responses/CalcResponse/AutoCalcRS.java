@@ -1,6 +1,5 @@
 package com.example.KaskoWebClient.model.api.responses.CalcResponse;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -63,8 +62,7 @@ public class AutoCalcRS {
     private String calcType;
 
     @JsonProperty("calc_date")
-    @DateTimeFormat(pattern="yyyy-MM-dd")
-    private Date calcDate;
+    private String calcDate;
 
     @JsonProperty("total_summ")
     private TotalSumm totalSumm;
@@ -238,11 +236,11 @@ public class AutoCalcRS {
         this.calcType = calcType;
     }
 
-    public Date getCalcDate() {
+    public String getCalcDate() {
         return calcDate;
     }
 
-    public void setCalcDate(Date calcDate) {
+    public void setCalcDate(String calcDate) {
         this.calcDate = calcDate;
     }
 

@@ -1,12 +1,13 @@
 package com.example.KaskoWebClient.model.api.requests.CalcRequest;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
-
+@JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName("autoCalcRq")
 public class AutoCalcRq {
 
@@ -17,8 +18,7 @@ public class AutoCalcRq {
     private String calcType;
 
     @JsonProperty("calc_date")
-    @DateTimeFormat(pattern="yyyy-MM-dd")
-    private Date calcDate;
+    private String calcDate;
 
     @JsonProperty("model_selection")
     private Boolean modelSelection;
@@ -63,11 +63,11 @@ public class AutoCalcRq {
         this.calcType = calcType;
     }
 
-    public Date getCalcDate() {
+    public String getCalcDate() {
         return calcDate;
     }
 
-    public void setCalcDate(Date calcDate) {
+    public void setCalcDate(String calcDate) {
         this.calcDate = calcDate;
     }
 
