@@ -1,12 +1,12 @@
 package com.example.KaskoWebClient.model.api.requests.CalcRequest;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
-import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.util.ResourceUtils;
+import java.io.File;
+import java.io.FileNotFoundException;
 
-import java.util.Date;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName("autoCalcRq")
 public class AutoCalcRq {

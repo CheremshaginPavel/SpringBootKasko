@@ -3,6 +3,7 @@ package com.example.KaskoWebClient.controllers;
 import com.example.KaskoWebClient.model.api.requests.CalcRequest.*;
 import com.example.KaskoWebClient.model.api.responses.CalcResponse.AutoCalcResponse;
 import com.example.KaskoWebClient.model.api.responses.ProductResponse.Products;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import org.springframework.http.HttpEntity;
@@ -38,7 +39,12 @@ public class  MainController {
     }
 
     @GetMapping("/policy")
-    public ModelAndView policy(Model model) throws IOException, ParseException {
+    public ModelAndView policy(Model model) throws IOException, ParseException, JsonProcessingException {
+        RestTemplate restTemplate = new RestTemplate();
+        CollectionVehicles collectionVehicles =
+                restTemplate.getForObject
+                        ("https://testout.sovcomins.ru/casco/cartest/get_vehicles", CollectionVehicles.class);
+        model.addAttribute("collectionVehicles", collectionVehicles);
         model.addAttribute("autoCalcRq", new AutoCalcRq());
         return new ModelAndView("policy");
     }
@@ -55,46 +61,46 @@ public class  MainController {
 
         Price price = new Price();
         price.setCurrency("RUB");
-        price.setSum("986000");
+        price.setSum(autoCalcRq.getAuto().getPrice().getSum());
         autoDescription.setPrice(price);
         autoDescription.setRegionId("2");
         creditBank.setBankId("9918113");
-        creditBank.setBankName("Банк");
+        creditBank.setBankName(autoCalcRq.getAuto().getCreditBank().getBankName());
         autoDescription.setCreditBank(creditBank);
 
-        modelDescription.setYear("2021");
-        modelDescription.setTsNew(true);
+        modelDescription.setYear(autoCalcRq.getAuto().getModelDescription().getYear());
+        modelDescription.setTsNew(autoCalcRq.getAuto().getModelDescription().getTsNew());
         modelDescription.setMarkId("73");
         modelDescription.setModelId("4759");
-        modelDescription.setMarkName("HYUNDAI");
-        modelDescription.setHorsepower("123");
-        modelDescription.setModelName("SOLARIS");
+        modelDescription.setMarkName(autoCalcRq.getAuto().getModelDescription().getMarkName());
+        modelDescription.setHorsepower(autoCalcRq.getAuto().getModelDescription().getHorsepower());
+        modelDescription.setModelName(autoCalcRq.getAuto().getModelDescription().getModelName());
         SecurityJa securityJa = new SecurityJa();
-        securityJa.setRecommendedPuu(true);
+        securityJa.setRecommendedPuu(autoCalcRq.getAuto().getModelDescription().getSecurityJa().getRecommendedPuu());
         modelDescription.setSecurityJa(securityJa);
         SterringWheel sterringWheel = new SterringWheel();
-        sterringWheel.setSide("LEFT");
+        sterringWheel.setSide(autoCalcRq.getAuto().getModelDescription().getSterringWheel().getSide());
         modelDescription.setSterringWheel(sterringWheel);
         autoDescription.setModelDescription(modelDescription);
         autoDescription.setSpecialProgramId(0);
         autoCalcRq.setAuto(autoDescription);
         DriversDescription driversDescription = new DriversDescription();
         Driver driver = new Driver();
-        driver.setAge("23");
-        driver.setGender("MALE");
-        driver.setResident(true);
+        driver.setAge(autoCalcRq.getDrivers().getDriver().getAge());
+        driver.setGender(autoCalcRq.getDrivers().getDriver().getGender());
+        driver.setResident(autoCalcRq.getDrivers().getDriver().getResident());
         driver.setFlagLink(1);
-        driver.setExperience("4");
+        driver.setExperience(autoCalcRq.getDrivers().getDriver().getExperience());
         driver.setRegionRegistrationId("2");
         driversDescription.setDriver(driver);
         driversDescription.setMultidrive(false);
         autoCalcRq.setDrivers(driversDescription);
         Insurer insurer = new Insurer();
-        insurer.setGender("MALE");
-        insurer.setLastName("Иванов");
-        insurer.setFirstName("Иван");
-        insurer.setMiddleName("Тестович");
-        insurer.setDateOfBirth("1997-10-22");
+        insurer.setGender(autoCalcRq.getInsurer().getGender());
+        insurer.setLastName(autoCalcRq.getInsurer().getLastName());
+        insurer.setFirstName(autoCalcRq.getInsurer().getFirstName());
+        insurer.setMiddleName(autoCalcRq.getInsurer().getMiddleName());
+        insurer.setDateOfBirth(autoCalcRq.getInsurer().getDateOfBirth());
         autoCalcRq.setInsurer(insurer);
 
         SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
@@ -113,66 +119,6 @@ public class  MainController {
         autoCalcRq.setInsurance(insuranceDescription);
         autoCalcRq.setPartnerPin("cartest");
         autoCalcRq.setModelSelection(false);
-
-//        autoCalcRq.setPartnerPin("cartest");
-//        autoCalcRq.setCalcType("KASKO");
-//        autoCalcRq.setCalcDate(new Date());
-//        autoCalcRq.setExpressQuotationId("5768484");
-//
-//        modelDescription.setMarkId("52");
-//        modelDescription.setModelId("4908");
-//        creditBank.setBankId("137629");
-//        autoDescription.setModelDescription(modelDescription);
-//        autoDescription.setCreditBank(creditBank);
-//        autoDescription.setWarranty("0");
-//        autoDescription.setAccidentsLastYear("0");
-//        autoDescription.setSpecialProgramId(0);
-//        autoCalcRq.setAuto(autoDescription);
-//
-//        insuranceDescription.setKvSize("0");
-//        insuranceDescription.setProductId("17447");
-//        insuranceDescription.setContractId("1");
-//        insuranceDescription.setTermInsurance(36);
-//        insuranceDescription.setSpecialProgram(false);
-//        insuranceDescription.setFranchiseId(51);
-//        insuranceDescription.setDeprecation(false);
-//        insuranceDescription.setReimbursement(2);
-//        insuranceDescription.setPaymentPlanId(1);
-////        String dateBirth = (String) model.getAttribute("insurer.dateOfBirth");
-////        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-////        Date date = sdf.parse(dateBirth);
-////        Insurer insurer = new Insurer();
-////        insurer.setDateOfBirth(date);
-////        autoCalcRq.setInsurer(insurer);
-//
-//        Risks risks = new Risks();
-//        Risk riskChild = new Risk();
-//        List<Risk> risk = new ArrayList<>();
-//        riskChild.setRiskId(1);
-//        riskChild.setBankRequired(false);
-//        riskChild.setCodeRequired(false);
-//        InsuredSumm insuredSumm = new InsuredSumm();
-//        insuredSumm.setSum("1200000");
-//        riskChild.setInsuredSumm(insuredSumm);
-//        risk.add(0, riskChild);
-//
-//        riskChild.setRiskId(3);
-//        riskChild.setInsuredSumm(insuredSumm);
-//
-//        risk.add(1, riskChild);
-//        risks.setRisk(risk);
-//
-//        insuranceDescription.setRisks(risks);
-//
-//        DriversDescription driversDescription = new DriversDescription();
-//        driversDescription.setInsurerWorkersFlag(false);
-//        driversDescription.setOtherWorkersFlag(false);
-//        driversDescription.setOtherMultidriveFlag(true);
-//        driversDescription.setMultidrive(false);
-//        driversDescription.setMultidriveType(3);
-//
-//        autoCalcRq.setInsurance(insuranceDescription);
-//        autoCalcRq.setDrivers(driversDescription);
 
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
