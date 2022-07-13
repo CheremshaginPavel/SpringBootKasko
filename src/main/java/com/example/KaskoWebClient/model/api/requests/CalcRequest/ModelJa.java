@@ -23,6 +23,7 @@ public class ModelJa implements Serializable, Comparable<ModelJa> {
     @JsonProperty("right_side_wheel")
     private Boolean hasRightSideWheel;
 
+    @JsonDeserialize(using = ItemDeserializer.class)
     @JsonProperty("production_years")
     private ArrayList<Integer> productionYears;
 
@@ -64,6 +65,7 @@ public class ModelJa implements Serializable, Comparable<ModelJa> {
     private Boolean wear;
 
     //field8 - тип документа: 1 - первичный
+    @JsonDeserialize(using = ItemDeserializer.class)
     @JsonProperty("primary_years")
     private ArrayList<Integer> primaryYears;
     //field8 - тип документа: 3 - возобновление

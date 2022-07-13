@@ -3,6 +3,7 @@ package com.example.KaskoWebClient.model.api.requests.CalcRequest;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -25,6 +26,7 @@ public class AutoDictJa implements Serializable, Comparable<AutoDictJa> {
     @JsonProperty("transportTypeId")
     private long transportTypeId;
 
+    @JsonDeserialize(using = ItemDeserializerModels.class)
     @JsonProperty("models")
     private ArrayList<ModelJa> models;
 
