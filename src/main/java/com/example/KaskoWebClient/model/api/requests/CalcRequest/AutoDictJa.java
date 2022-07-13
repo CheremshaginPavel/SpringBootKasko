@@ -28,7 +28,7 @@ public class AutoDictJa implements Serializable, Comparable<AutoDictJa> {
 
     @JsonDeserialize(using = ItemDeserializerModels.class)
     @JsonProperty("models")
-    private ArrayList<ModelJa> models;
+    private List<ModelJa> models;
 
     @JsonProperty("startDate")
     private Date startDate;
@@ -156,11 +156,11 @@ public class AutoDictJa implements Serializable, Comparable<AutoDictJa> {
         return activeFlag && activePeriod;
     }
 
-    public ArrayList<ModelJa> getModels() {
+    public List<ModelJa> getModels() {
         return models;
     }
 
-    public void setModels(ArrayList<ModelJa> models) {
+    public void setModels(List<ModelJa> models) {
         this.models = models;
     }
 }
