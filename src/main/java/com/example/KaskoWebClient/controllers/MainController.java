@@ -41,13 +41,22 @@ public class  MainController {
     @GetMapping("/policy")
     public ModelAndView policy(Model model) throws IOException, ParseException, JsonProcessingException {
         RestTemplate restTemplate = new RestTemplate();
+        AutoCalcRq autoCalcRq = new AutoCalcRq();
+        ModelAndView modelAndView = new ModelAndView("policy");
 //        CollectionVehicles collectionVehicles =
 //                restTemplate.getForObject
 //                        ("https://testout.sovcomins.ru/casco/cartest/get_vehicles", CollectionVehicles.class);
 
        // model.addAttribute("collectionVehicles", collectionVehicles);
-        model.addAttribute("autoCalcRq", new AutoCalcRq());
-        return new ModelAndView("policy");
+        model.addAttribute("autoCalcRq", autoCalcRq);
+        modelAndView.addObject("mapMark", autoCalcRq.getMapMark());
+        modelAndView.addObject("mapAcura", autoCalcRq.getMapAcura());
+        modelAndView.addObject("mapBentley", autoCalcRq.getMapBentley());
+        modelAndView.addObject("mapAlfaRomeo", autoCalcRq.getMapAlfaRomeo());
+        modelAndView.addObject("mapAudi", autoCalcRq.getMapAudi());
+        modelAndView.addObject("mapBmw", autoCalcRq.getMapBmw());
+        modelAndView.addObject("mapHyundai", autoCalcRq.getMapHyundai());
+        return modelAndView;
     }
 
     @PostMapping("/calc")

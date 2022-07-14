@@ -6,6 +6,8 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 import org.springframework.util.ResourceUtils;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.HashMap;
+import java.util.Map;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName("autoCalcRq")
@@ -44,8 +46,22 @@ public class AutoCalcRq {
     @JsonProperty("insurer")
     private Insurer insurer;
 
+    private final Map<String, String> mapMark = new HashMap<>();
+
+    private final Map<String, String> mapHyundai = new HashMap<>();
+
+    private final Map<String, String> mapAcura = new HashMap<>();
+
+    private final Map<String, String> mapAlfaRomeo = new HashMap<>();
+
+    private final Map<String, String> mapAudi = new HashMap<>();
+
+    private final Map<String, String> mapBentley = new HashMap<>();
+
     public AutoCalcRq() {
     }
+
+    private final Map<String, String> mapBmw = new HashMap<>();
 
     public String getPartnerPin() {
         return partnerPin;
@@ -133,5 +149,57 @@ public class AutoCalcRq {
 
     public void setInsurer(Insurer insurer) {
         this.insurer = insurer;
+    }
+
+    public Map<String, String> getMapMark() {
+        mapMark.put("1", "ACURA");
+        mapMark.put("2", "ALFA ROMEO");
+        mapMark.put("7", "AUDI");
+        mapMark.put("11", "BENTLEY");
+        mapMark.put("15", "BMW");
+        mapMark.put("73", "HYUNDAI");
+        return mapMark;
+    }
+
+    public Map<String, String> getMapAcura() {
+        mapAcura.put("2049", "RDX");
+        mapAcura.put("2051", "RSX");
+        mapAcura.put("3689", "MDX 3,5");
+        return mapAcura;
+    }
+
+    public Map<String, String> getMapAlfaRomeo() {
+        mapAlfaRomeo.put("5719", "GIULIETTA 1,4T");
+        mapAlfaRomeo.put("4223", "MITO 1,4T");
+        mapAlfaRomeo.put("2053", "BRERA 2,2");
+        return mapAlfaRomeo;
+    }
+
+    public Map<String, String> getMapAudi() {
+        mapAudi.put("269", "S8");
+        mapAudi.put("335", "A4 1,9 TDI");
+        mapAudi.put("342", "A2 1,4");
+        return mapAudi;
+    }
+
+    public Map<String, String> getMapBentley() {
+        mapBentley.put("1768", "CONTINENTAL GT 6,0");
+        mapBentley.put("6904", "CONTINENTAL GT 4,0");
+        mapBentley.put("6910", "FLYING SPUR 6,0");
+        return mapBentley;
+    }
+
+    public Map<String, String> getMapBmw() {
+        mapBmw.put("26", "320 CABRIO (E93)");
+        mapBmw.put("61", "530XI (E60)");
+        mapBmw.put("807", "535D (E60)");
+        return mapBmw;
+    }
+
+    public Map<String, String> getMapHyundai() {
+        mapHyundai.put("1188", "AVANTE 1,6");
+        mapHyundai.put("3198", "COUPE 2,0");
+        mapHyundai.put("4758", "SOLARIS 1,4");
+        return mapHyundai;
     }
 }
