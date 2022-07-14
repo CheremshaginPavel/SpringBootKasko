@@ -1,7 +1,9 @@
 package com.example.KaskoWebClient.model.api.responses.CalcResponse;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Payments {
 
     @JsonProperty("item_id")

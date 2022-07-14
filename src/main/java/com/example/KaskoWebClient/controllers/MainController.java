@@ -41,10 +41,11 @@ public class  MainController {
     @GetMapping("/policy")
     public ModelAndView policy(Model model) throws IOException, ParseException, JsonProcessingException {
         RestTemplate restTemplate = new RestTemplate();
-        CollectionVehicles collectionVehicles =
-                restTemplate.getForObject
-                        ("https://testout.sovcomins.ru/casco/cartest/get_vehicles", CollectionVehicles.class);
-        model.addAttribute("collectionVehicles", collectionVehicles);
+//        CollectionVehicles collectionVehicles =
+//                restTemplate.getForObject
+//                        ("https://testout.sovcomins.ru/casco/cartest/get_vehicles", CollectionVehicles.class);
+
+       // model.addAttribute("collectionVehicles", collectionVehicles);
         model.addAttribute("autoCalcRq", new AutoCalcRq());
         return new ModelAndView("policy");
     }
@@ -70,11 +71,13 @@ public class  MainController {
 
         modelDescription.setYear(autoCalcRq.getAuto().getModelDescription().getYear());
         modelDescription.setTsNew(autoCalcRq.getAuto().getModelDescription().getTsNew());
-        modelDescription.setMarkId("73");
-        modelDescription.setModelId("4759");
-        modelDescription.setMarkName(autoCalcRq.getAuto().getModelDescription().getMarkName());
-        modelDescription.setHorsepower(autoCalcRq.getAuto().getModelDescription().getHorsepower());
+        modelDescription.setMarkId(autoCalcRq.getAuto().getModelDescription().getMarkId());
+        modelDescription.setMarkName(autoCalcRq.getAuto().getModelDescription().searchNameModel
+                (modelDescription.getMarkId()));
         modelDescription.setModelName(autoCalcRq.getAuto().getModelDescription().getModelName());
+        modelDescription.setModelId(autoCalcRq.getAuto().getModelDescription().searchIdModel
+                (modelDescription.getModelName()));
+        modelDescription.setHorsepower(autoCalcRq.getAuto().getModelDescription().getHorsepower());
         SecurityJa securityJa = new SecurityJa();
         securityJa.setRecommendedPuu(autoCalcRq.getAuto().getModelDescription().getSecurityJa().getRecommendedPuu());
         modelDescription.setSecurityJa(securityJa);

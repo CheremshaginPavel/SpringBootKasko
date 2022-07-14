@@ -2,6 +2,11 @@ package com.example.KaskoWebClient.model.api.requests.CalcRequest;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+import java.util.concurrent.atomic.AtomicReference;
+
 public class ModelDescription {
 
     @JsonProperty("tachograph")
@@ -215,4 +220,47 @@ public class ModelDescription {
     public void setSecurityJa(SecurityJa securityJa) {
         this.securityJa = securityJa;
     }
+
+    public String searchNameModel(String ModelId) {
+        Map<String, String> mapId = new HashMap<String, String>();
+
+        mapId.put("1", "ACURA");
+        mapId.put("2", "ALFA ROMEO");
+        mapId.put("7", "AUDI");
+        mapId.put("11", "BENTLEY");
+        mapId.put("15", "BMW");
+        mapId.put("23", "CADILLAC");
+        mapId.put("28", "CHERY");
+        mapId.put("29", "CHEVROLET");
+        mapId.put("30", "CHRYSLER");
+        mapId.put("31", "CITROEN");
+        mapId.put("73", "HYUNDAI");
+
+        for (Map.Entry<String, String> entry : mapId.entrySet()) {
+            if (Objects.equals(entry.getKey(), ModelId)) {
+                return entry.getValue();
+            }
+        }
+        return ModelId;
+    }
+
+    public String searchIdModel(String _modelName) {
+        Map<String, String> mapId = new HashMap<String, String>();
+
+        mapId.put("663", "TRAJET 2,0");
+        mapId.put("664", "H 1 STAREX 2,5");
+        mapId.put("1188", "AVANTE 1,6");
+        mapId.put("1450", "GETZ 1,5 D");
+        mapId.put("3198", "COUPE 2,0");
+        mapId.put("4758", "SOLARIS 1,4");
+        mapId.put("4759", "SOLARIS 1,6");
+
+        for (Map.Entry<String, String> entry : mapId.entrySet()) {
+            if (Objects.equals(entry.getValue(), _modelName)) {
+                return entry.getKey();
+            }
+        }
+        return _modelName;
+    }
+
 }

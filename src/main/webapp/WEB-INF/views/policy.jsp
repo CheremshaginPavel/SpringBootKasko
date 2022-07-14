@@ -1,7 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<jsp:useBean id="collectionVehicles" scope="request" type="com.example.KaskoWebClient.model.api.requests.CalcRequest.CollectionVehicles"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -31,31 +30,39 @@
                         <td><input type="checkbox" name="auto.modelDescription.tsNew"/></td>
                     </tr>
                     <tr>
-                        <td>Наименование автомобиля:</td>
-                        <td><input type="text" name="auto.modelDescription.markName"/></td>
+                        <td>Марка автомобиля:</td>
+                        <td>
+                            <select name="auto.modelDescription.markId" >
+                                <option></option>
+                                <option value="1">ACURA</option>
+                                <option value="2">ALFA ROMEO</option>
+                                <option value="7">AUDI</option>
+                                <option value="11">BENTLEY</option>
+                                <option value="15">BMW</option>
+                                <option value="23">CADILLAC</option>
+                                <option value="28">CHERY</option>
+                                <option value="29">CHEVROLET</option>
+                                <option value="30">CHRYSLER</option>
+                                <option value="31">CITROEN</option>
+                                <option value="73">HYUNDAI</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Модель автомобиля:</td>
+                        <td><input type="text" name="auto.modelDescription.modelName"/></td>
                     </tr>
                     <tr>
                         <td>Количество лошадиных сил:</td>
                         <td><input type="text" name="auto.modelDescription.horsepower"/></td>
                     </tr>
-<%--                    <tr>--%>
-<%--                        <td>Наименование модели:</td>--%>
-<%--                        <td>--%>
-<%--                            <form:select path="collectionVehicles.autoDictJa.markName">--%>
-<%--&lt;%&ndash;                                <form:option value="NONE" label=" --- Select --- "/>&ndash;%&gt;--%>
-<%--&lt;%&ndash;                                    <c:forEach var="elem" items="${collectionVehicles.autoDictJa}">&ndash;%&gt;--%>
-<%--&lt;%&ndash;                                        <option>${elem.markName}</option>&ndash;%&gt;--%>
-<%--&lt;%&ndash;                                    </c:forEach>&ndash;%&gt;--%>
-<%--                            </form:select>--%>
-<%--                        </td>--%>
-<%--                    </tr>--%>
                     <tr>
                         <td>Установлен рекомендованный ПУУ:</td>
                         <td><input type="checkbox" name="auto.modelDescription.securityJa.recommendedPuu"/></td>
                     </tr>
                     <tr>
                         <td>Положение руля:</td>
-                        <td><input type="text" name="auto.modelDescription.steeringWheel.side"/></td>
+                        <td><input type="text" name="auto.modelDescription.sterringWheel.side"/></td>
                     </tr>
                     <tr>
                         <td>Ваш возраст:</td>
@@ -73,10 +80,6 @@
                         <td>Опыт вождения:</td>
                         <td><input type="text" name="drivers.driver.experience"/></td>
                     </tr>
-<%--                    <tr>--%>
-<%--                        <td>Регион регистрации автомобиля:</td>--%>
-<%--                        <td><input type="text" name="drivers.driver.regionRegistrationId"/></td>--%>
-<%--                    </tr>--%>
                     <tr>
                         <td>Пол страхователя:</td>
                         <td><input type="text" name="insurer.gender"/></td>
