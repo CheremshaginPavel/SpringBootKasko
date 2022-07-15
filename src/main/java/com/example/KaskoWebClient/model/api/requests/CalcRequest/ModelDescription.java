@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class ModelDescription {
 
@@ -221,6 +220,39 @@ public class ModelDescription {
         this.securityJa = securityJa;
     }
 
+    public HashMap<String, String> findMap(String _markId) {
+        Map<String, String> chooseMap = new HashMap<>();
+        AutoCalcRq autoCalcRq = new AutoCalcRq();
+        switch (_markId) {
+           case "1": {
+               chooseMap = autoCalcRq.getMapAcura();
+               break;
+           }
+           case "2" : {
+               chooseMap = autoCalcRq.getMapAlfaRomeo();
+               break;
+           }
+           case "7" : {
+               chooseMap = autoCalcRq.getMapAudi();
+               break;
+           }
+           case "11" : {
+               chooseMap = autoCalcRq.getMapBentley();
+               break;
+           }
+           case "15" : {
+               chooseMap = autoCalcRq.getMapBmw();
+               break;
+           }
+           case "73" : {
+               chooseMap = autoCalcRq.getMapHyundai();
+               break;
+           }
+           default : {}
+        }
+        return (HashMap<String, String>) chooseMap;
+    }
+
     public String searchNameMark(String _markId) {
         Map<String, String> mapId = new HashMap<String, String>();
 
@@ -242,13 +274,24 @@ public class ModelDescription {
     public String searchNameModel(String _modelId) {
         Map<String, String> mapId = new HashMap<String, String>();
 
-        mapId.put("663", "TRAJET 2,0");
-        mapId.put("664", "H 1 STAREX 2,5");
         mapId.put("1188", "AVANTE 1,6");
-        mapId.put("1450", "GETZ 1,5 D");
         mapId.put("3198", "COUPE 2,0");
         mapId.put("4758", "SOLARIS 1,4");
-        mapId.put("4759", "SOLARIS 1,6");
+        mapId.put("2049", "RDX");
+        mapId.put("2051", "RSX");
+        mapId.put("3689", "MDX 3,5");
+        mapId.put("5719", "GIULIETTA 1,4T");
+        mapId.put("4223", "MITO 1,4T");
+        mapId.put("2053", "BRERA 2,2");
+        mapId.put("269", "S8");
+        mapId.put("335", "A4 1,9 TDI");
+        mapId.put("342", "A2 1,4");
+        mapId.put("1768", "CONTINENTAL GT 6,0");
+        mapId.put("6904", "CONTINENTAL GT 4,0");
+        mapId.put("6910", "FLYING SPUR 6,0");
+        mapId.put("26", "320 CABRIO (E93)");
+        mapId.put("61", "530XI (E60)");
+        mapId.put("807", "535D (E60)");
 
         for (Map.Entry<String, String> entry : mapId.entrySet()) {
             if (Objects.equals(entry.getValue(), _modelId)) {

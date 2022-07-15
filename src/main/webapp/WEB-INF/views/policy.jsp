@@ -1,5 +1,8 @@
 <%@ page import="com.example.KaskoWebClient.model.api.requests.CalcRequest.AutoCalcRq" %>
 <%@ page import="java.util.HashMap" %>
+<%@ page import="com.example.KaskoWebClient.model.api.requests.CalcRequest.AutoDescription" %>
+<%@ page import="com.example.KaskoWebClient.model.api.requests.CalcRequest.ModelJa" %>
+<%@ page import="com.example.KaskoWebClient.model.api.requests.CalcRequest.ModelDescription" %>
 <%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -51,40 +54,16 @@
                             </form:select>
                         </td>
                     </tr>
+
                     <tr>
                         <td>Модель автомобиля:</td>
                         <td>
-<%--                            <%--%>
-<%--                                switch (globalKey) {--%>
-<%--                                    case "1": {--%>
-<%--                                        chooseMap = (HashMap) mapAcura.clone();--%>
-<%--                                        break;--%>
-<%--                                    }--%>
-<%--                                    case "2" : {--%>
-<%--                                        chooseMap = (HashMap) mapAlfaRomeo.clone();--%>
-<%--                                        break;--%>
-<%--                                    }--%>
-<%--                                    case "7" : {--%>
-<%--                                        chooseMap = (HashMap) mapAudi.clone();--%>
-<%--                                        break;--%>
-<%--                                    }--%>
-<%--                                    case "11" : {--%>
-<%--                                        chooseMap = (HashMap) mapBentley.clone();--%>
-<%--                                        break;--%>
-<%--                                    }--%>
-<%--                                    case "15" : {--%>
-<%--                                        chooseMap = (HashMap) mapBmw.clone();--%>
-<%--                                        break;--%>
-<%--                                    }--%>
-<%--                                    case "73" : {--%>
-<%--                                        chooseMap = (HashMap) mapHyundai.clone();--%>
-<%--                                        break;--%>
-<%--                                    }--%>
-<%--                                    default : {}--%>
-<%--                                }--%>
-<%--                            %>--%>
-                            <form:select path="auto.modelDescription.modelId">
-                                <c:forEach var="item" items="${mapHyundai}">
+                            <%
+                                ModelDescription modelDescription = new ModelDescription();
+                                chooseMap = modelDescription.findMap(globalKey);
+                            %>
+                            <form:select path="auto.modelDescription.modelId" onchange="this">
+                                <c:forEach var="item" items="${chooseMap}">
                                     <form:option value="${item.key}">${item.value}</form:option>
                                 </c:forEach>
                             </form:select>
