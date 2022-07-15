@@ -221,7 +221,7 @@ public class ModelDescription {
         this.securityJa = securityJa;
     }
 
-    public String searchNameModel(String ModelId) {
+    public String searchNameMark(String _markId) {
         Map<String, String> mapId = new HashMap<String, String>();
 
         mapId.put("1", "ACURA");
@@ -229,45 +229,17 @@ public class ModelDescription {
         mapId.put("7", "AUDI");
         mapId.put("11", "BENTLEY");
         mapId.put("15", "BMW");
-        mapId.put("23", "CADILLAC");
-        mapId.put("28", "CHERY");
-        mapId.put("29", "CHEVROLET");
-        mapId.put("30", "CHRYSLER");
-        mapId.put("31", "CITROEN");
         mapId.put("73", "HYUNDAI");
 
         for (Map.Entry<String, String> entry : mapId.entrySet()) {
-            if (Objects.equals(entry.getKey(), ModelId)) {
+            if (Objects.equals(entry.getKey(), _markId)) {
                 return entry.getValue();
             }
         }
-        return ModelId;
+        return _markId;
     }
 
-    public String searchIDModel(String ModelId) {
-        Map<String, String> mapId = new HashMap<String, String>();
-
-        mapId.put("1", "ACURA");
-        mapId.put("2", "ALFA ROMEO");
-        mapId.put("7", "AUDI");
-        mapId.put("11", "BENTLEY");
-        mapId.put("15", "BMW");
-        mapId.put("23", "CADILLAC");
-        mapId.put("28", "CHERY");
-        mapId.put("29", "CHEVROLET");
-        mapId.put("30", "CHRYSLER");
-        mapId.put("31", "CITROEN");
-        mapId.put("73", "HYUNDAI");
-
-        for (Map.Entry<String, String> entry : mapId.entrySet()) {
-            if (Objects.equals(entry.getValue(), ModelId)) {
-                return entry.getKey();
-            }
-        }
-        return ModelId;
-    }
-
-    public String searchIdModel(String _modelName) {
+    public String searchNameModel(String _modelId) {
         Map<String, String> mapId = new HashMap<String, String>();
 
         mapId.put("663", "TRAJET 2,0");
@@ -279,11 +251,11 @@ public class ModelDescription {
         mapId.put("4759", "SOLARIS 1,6");
 
         for (Map.Entry<String, String> entry : mapId.entrySet()) {
-            if (Objects.equals(entry.getValue(), _modelName)) {
+            if (Objects.equals(entry.getValue(), _modelId)) {
                 return entry.getKey();
             }
         }
-        return _modelName;
+        return _modelId;
     }
 
 }

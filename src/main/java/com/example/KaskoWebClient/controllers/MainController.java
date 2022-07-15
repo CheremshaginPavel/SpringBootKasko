@@ -23,6 +23,8 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 public class  MainController {
@@ -43,12 +45,16 @@ public class  MainController {
         RestTemplate restTemplate = new RestTemplate();
         AutoCalcRq autoCalcRq = new AutoCalcRq();
         ModelAndView modelAndView = new ModelAndView("policy");
+        String globalKey = "";
+        Map<String, String> chooseMap = new HashMap<>();
 //        CollectionVehicles collectionVehicles =
 //                restTemplate.getForObject
 //                        ("https://testout.sovcomins.ru/casco/cartest/get_vehicles", CollectionVehicles.class);
 
        // model.addAttribute("collectionVehicles", collectionVehicles);
         model.addAttribute("autoCalcRq", autoCalcRq);
+        modelAndView.addObject("globalKey", globalKey);
+        modelAndView.addObject("chooseMap", chooseMap);
         modelAndView.addObject("mapMark", autoCalcRq.getMapMark());
         modelAndView.addObject("mapAcura", autoCalcRq.getMapAcura());
         modelAndView.addObject("mapBentley", autoCalcRq.getMapBentley());
@@ -83,9 +89,9 @@ public class  MainController {
         modelDescription.setMarkId(autoCalcRq.getAuto().getModelDescription().getMarkId());
         modelDescription.setMarkName(autoCalcRq.getAuto().getModelDescription().searchNameModel
                 (modelDescription.getMarkId()));
-        modelDescription.setModelName(autoCalcRq.getAuto().getModelDescription().getModelName());
-        modelDescription.setModelId(autoCalcRq.getAuto().getModelDescription().searchIdModel
-                (modelDescription.getModelName()));
+        modelDescription.setModelId(autoCalcRq.getAuto().getModelDescription().getModelId());
+        modelDescription.setModelName(autoCalcRq.getAuto().getModelDescription().searchNameMark
+                (modelDescription.getModelId()));
         modelDescription.setHorsepower(autoCalcRq.getAuto().getModelDescription().getHorsepower());
         SecurityJa securityJa = new SecurityJa();
         securityJa.setRecommendedPuu(autoCalcRq.getAuto().getModelDescription().getSecurityJa().getRecommendedPuu());

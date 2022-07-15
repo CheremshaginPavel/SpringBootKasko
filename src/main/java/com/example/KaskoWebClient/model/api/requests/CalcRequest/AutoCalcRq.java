@@ -152,6 +152,7 @@ public class AutoCalcRq {
     }
 
     public Map<String, String> getMapMark() {
+        mapMark.put("", "");
         mapMark.put("1", "ACURA");
         mapMark.put("2", "ALFA ROMEO");
         mapMark.put("7", "AUDI");
@@ -162,6 +163,7 @@ public class AutoCalcRq {
     }
 
     public Map<String, String> getMapAcura() {
+        mapAcura.put("", "");
         mapAcura.put("2049", "RDX");
         mapAcura.put("2051", "RSX");
         mapAcura.put("3689", "MDX 3,5");
@@ -169,6 +171,7 @@ public class AutoCalcRq {
     }
 
     public Map<String, String> getMapAlfaRomeo() {
+        mapAlfaRomeo.put("", "");
         mapAlfaRomeo.put("5719", "GIULIETTA 1,4T");
         mapAlfaRomeo.put("4223", "MITO 1,4T");
         mapAlfaRomeo.put("2053", "BRERA 2,2");
@@ -176,6 +179,7 @@ public class AutoCalcRq {
     }
 
     public Map<String, String> getMapAudi() {
+        mapAudi.put("", "");
         mapAudi.put("269", "S8");
         mapAudi.put("335", "A4 1,9 TDI");
         mapAudi.put("342", "A2 1,4");
@@ -183,6 +187,7 @@ public class AutoCalcRq {
     }
 
     public Map<String, String> getMapBentley() {
+        mapBentley.put("", "");
         mapBentley.put("1768", "CONTINENTAL GT 6,0");
         mapBentley.put("6904", "CONTINENTAL GT 4,0");
         mapBentley.put("6910", "FLYING SPUR 6,0");
@@ -190,6 +195,7 @@ public class AutoCalcRq {
     }
 
     public Map<String, String> getMapBmw() {
+        mapBmw.put("", "");
         mapBmw.put("26", "320 CABRIO (E93)");
         mapBmw.put("61", "530XI (E60)");
         mapBmw.put("807", "535D (E60)");
@@ -197,6 +203,7 @@ public class AutoCalcRq {
     }
 
     public Map<String, String> getMapHyundai() {
+        mapHyundai.put("", "");
         mapHyundai.put("1188", "AVANTE 1,6");
         mapHyundai.put("3198", "COUPE 2,0");
         mapHyundai.put("4758", "SOLARIS 1,4");

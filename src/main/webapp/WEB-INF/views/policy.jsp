@@ -1,14 +1,18 @@
+<%@ page import="com.example.KaskoWebClient.model.api.requests.CalcRequest.AutoCalcRq" %>
+<%@ page import="java.util.HashMap" %>
 <%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="C" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--<jsp:useBean id="mapMark" scope="request" type="com.example.KaskoWebClient.model.api.requests.CalcRequest.AutoCalcRq"/>--%>
-<%--<jsp:useBean id="mapAcura" scope="request" type="com.example.KaskoWebClient.model.api.requests.CalcRequest.AutoCalcRq"/>--%>
-<%--<jsp:useBean id="mapBentley" scope="request" type="com.example.KaskoWebClient.model.api.requests.CalcRequest.AutoCalcRq"/>--%>
-<%--<jsp:useBean id="mapAlfaRomeo" scope="request" type="com.example.KaskoWebClient.model.api.requests.CalcRequest.AutoCalcRq"/>--%>
-<%--<jsp:useBean id="mapAudi" scope="request" type="com.example.KaskoWebClient.model.api.requests.CalcRequest.AutoCalcRq"/>--%>
-<%--<jsp:useBean id="mapBmw" scope="request" type="com.example.KaskoWebClient.model.api.requests.CalcRequest.AutoCalcRq"/>--%>
-<%--<jsp:useBean id="mapHyundai" scope="request" type="com.example.KaskoWebClient.model.api.requests.CalcRequest.AutoCalcRq"/>--%>
+<jsp:useBean id="mapAcura" scope="request" type="java.util.HashMap"/>
+<jsp:useBean id="mapBentley" scope="request" type="java.util.HashMap"/>
+<jsp:useBean id="mapAlfaRomeo" scope="request" type="java.util.HashMap"/>
+<jsp:useBean id="mapAudi" scope="request" type="java.util.HashMap"/>
+<jsp:useBean id="mapBmw" scope="request" type="java.util.HashMap"/>
+<jsp:useBean id="mapHyundai" scope="request" type="java.util.HashMap"/>
+<jsp:useBean id="chooseMap" type="java.util.HashMap" scope="request"/>
+<jsp:useBean id="globalKey" scope="request" type="java.lang.String"/>
+<jsp:useBean id="mapMark" scope="request" type="java.util.HashMap"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -18,7 +22,7 @@
     </head>
     <body>
         <%--@elvariable id="autoCalcRq" type="AutoCalcRq"--%>
-        <form:form action="/calc" method="post" modelAttribute="autoCalcRq">
+        <form:form action="/calc" method="post" modelAttribute="autoCalcRq" id="form">
             <table>
                 <tbody>
                     <tr>
@@ -37,32 +41,12 @@
                         <td>Автомобиль новый:</td>
                         <td><input type="checkbox" name="auto.modelDescription.tsNew"/></td>
                     </tr>
-<%--                    <tr>--%>
-<%--                        <td>Марка автомобиля:</td>--%>
-<%--                        <td>--%>
-<%--                            <select name="auto.modelDescription.markId" >--%>
-<%--                                <option></option>--%>
-<%--                                <option value="1">ACURA</option>--%>
-<%--                                <option value="2">ALFA ROMEO</option>--%>
-<%--                                <option value="7">AUDI</option>--%>
-<%--                                <option value="11">BENTLEY</option>--%>
-<%--                                <option value="15">BMW</option>--%>
-<%--                                <option value="23">CADILLAC</option>--%>
-<%--                                <option value="28">CHERY</option>--%>
-<%--                                <option value="29">CHEVROLET</option>--%>
-<%--                                <option value="30">CHRYSLER</option>--%>
-<%--                                <option value="31">CITROEN</option>--%>
-<%--                                <option value="73">HYUNDAI</option>--%>
-<%--                            </select>--%>
-<%--                        </td>--%>
-<%--                    </tr>--%>
                     <tr>
                         <td>Марка автомобиля:</td>
                         <td>
-                            <jsp:useBean id="mapMark" scope="request" type="java.util.HashMap"/>
                             <form:select path="auto.modelDescription.markId">
                                 <c:forEach var="item" items="${mapMark}">
-                                    <form:option value="${item.key}">${item.value}</form:option>
+                                    <form:option value="${globalKey = item.key}">${item.value}</form:option>
                                 </c:forEach>
                             </form:select>
                         </td>
@@ -70,9 +54,38 @@
                     <tr>
                         <td>Модель автомобиля:</td>
                         <td>
-                            <form:select path="auto.modelDescription.modelName">
-                                <c:forEach var="item" items="${mapMark}">
-                                    <form:option value="${item}">${item}</form:option>
+<%--                            <%--%>
+<%--                                switch (globalKey) {--%>
+<%--                                    case "1": {--%>
+<%--                                        chooseMap = (HashMap) mapAcura.clone();--%>
+<%--                                        break;--%>
+<%--                                    }--%>
+<%--                                    case "2" : {--%>
+<%--                                        chooseMap = (HashMap) mapAlfaRomeo.clone();--%>
+<%--                                        break;--%>
+<%--                                    }--%>
+<%--                                    case "7" : {--%>
+<%--                                        chooseMap = (HashMap) mapAudi.clone();--%>
+<%--                                        break;--%>
+<%--                                    }--%>
+<%--                                    case "11" : {--%>
+<%--                                        chooseMap = (HashMap) mapBentley.clone();--%>
+<%--                                        break;--%>
+<%--                                    }--%>
+<%--                                    case "15" : {--%>
+<%--                                        chooseMap = (HashMap) mapBmw.clone();--%>
+<%--                                        break;--%>
+<%--                                    }--%>
+<%--                                    case "73" : {--%>
+<%--                                        chooseMap = (HashMap) mapHyundai.clone();--%>
+<%--                                        break;--%>
+<%--                                    }--%>
+<%--                                    default : {}--%>
+<%--                                }--%>
+<%--                            %>--%>
+                            <form:select path="auto.modelDescription.modelId">
+                                <c:forEach var="item" items="${mapHyundai}">
+                                    <form:option value="${item.key}">${item.value}</form:option>
                                 </c:forEach>
                             </form:select>
                         </td>
