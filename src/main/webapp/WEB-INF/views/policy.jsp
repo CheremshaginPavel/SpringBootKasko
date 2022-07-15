@@ -60,17 +60,22 @@
                         <td>Марка автомобиля:</td>
                         <td>
                             <jsp:useBean id="mapMark" scope="request" type="java.util.HashMap"/>
-                            <form:select path="mapMark">
-                                <c:forEach var="item" items="${mapMark.values()}">
-                                    <form:option value="">${item}</form:option>
-<%--                                    <form:options items="${mapMark.values()}"></form:options>--%>
+                            <form:select path="auto.modelDescription.markId">
+                                <c:forEach var="item" items="${mapMark}">
+                                    <form:option value="${item.key}">${item.value}</form:option>
                                 </c:forEach>
                             </form:select>
                         </td>
                     </tr>
                     <tr>
                         <td>Модель автомобиля:</td>
-                        <td><input type="text" name="auto.modelDescription.modelName"/></td>
+                        <td>
+                            <form:select path="auto.modelDescription.modelName">
+                                <c:forEach var="item" items="${mapMark}">
+                                    <form:option value="${item}">${item}</form:option>
+                                </c:forEach>
+                            </form:select>
+                        </td>
                     </tr>
                     <tr>
                         <td>Количество лошадиных сил:</td>
