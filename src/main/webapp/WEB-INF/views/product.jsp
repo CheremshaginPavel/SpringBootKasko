@@ -1,17 +1,17 @@
-<%@ page contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html; charset=utf-8"
+         pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Product list</title>
 </head>
 <body>
 <h1 align="center">Products</h1>
 <br/>
-<table border="3" cellpadding="10">
+<table border="2" cellpadding="10">
     <colgroup>
         <col span="2" style="background: khaki">
         <col style="background-color: lightcyan">
@@ -20,15 +20,14 @@
         Table of products
     </caption>
     <tr>
-        <th>#</th>
         <th>ID</th>
         <th>Name</th>
     </tr>
-    <jsp:useBean id="ELEMENTS" scope="request" type="java.util.Map"/>
-    <c:forEach var="contact" items="${ELEMENTS}">
-            <tr>
-                <th>${contact.key}</th><th>${contact.value.id}</th><th>${contact.value.name}</th>
-            </tr>
+    <jsp:useBean id="products" scope="request" type="com.example.KaskoWebClient.model.api.responses.ProductResponse.Products"/>
+    <c:forEach var="contact" items="${products.products}">
+        <tr>
+            <th>${contact.id}</th><th>${contact.name}</th>
+        </tr>
     </c:forEach>
 </table>
 </body>

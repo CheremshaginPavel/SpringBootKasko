@@ -10,11 +10,11 @@
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>KaskoWebClient</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 	<name>KaskoWebClient</name>
 	<description>Demo project for practice</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>18</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -37,6 +37,10 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-jsr310</artifactId>
+		</dependency>
 
 	</dependencies>
 
@@ -48,5 +52,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
